@@ -1,8 +1,14 @@
 .header {
     display: flex;
     justify-content: center;
+    direction: column;
     width: 375px;
     height: 63px;
 }
 
-.header h1 {}
+.header img {
+    padding-left: 89px;
+    padding-right: 89px;
+    padding-top: 14px;
+    padding-bottom: 13px;
+}
