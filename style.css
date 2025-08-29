@@ -8,11 +8,17 @@
 
 }
 
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+}
+
 /* constrain page width on mobile mock (≈ 375–430px) */
 main,
 .footer__inner {
     width: 100%;
-    max-width: 460px;
+    max-width: 375px;
     /* your mock column */
     margin-inline: auto;
     padding-inline: 16px;
@@ -43,13 +49,43 @@ main,
     display: block;
 }
 
+/* container width (same as header area) */
+main {
+    width: 100%;
+    max-width: 375px;
+    /* your mock column */
+    margin-inline: auto;
+}
+
+/* Location bar */
 .location {
+    height: 50px;
+    /* Figma: H 50px */
+    background: #ededed;
+    /* soft gray strip */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* center the whole row */
     gap: 10px;
-    background: #ececec;
-    color: #333;
-    padding: 12px 0;
-    box-shadow: inset 0 1px 0 #d8d8d8;
+    /* space between icon/text */
+    border-top: 1px solid #e2e2e2;
+    /* subtle top line (mock has divider) */
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.location__icon {
+    width: 17px;
+    height: 17px;
+    /* Figma: 17px */
+    opacity: 0.9;
+}
+
+.location__text {
+    margin: 0;
+    font-weight: 500;
+    /* semi-bold like mock */
+    color: #3a3a3a;
+    letter-spacing: 0.1px;
+    /* tiny polish for readability */
 }
