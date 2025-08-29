@@ -1,0 +1,50 @@
+/* Header with back button */
+.header {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* centers logo */
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+}
+
+/* Back button sits absolutely on the left */
+.back-btn {
+    position: absolute;
+    left: 16px;
+    /* gutter */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.back-icon {
+    width: 30px;
+    /* size of SVG */
+    height: 30px;
+    display: block;
+}
+
+/* Centered logo */
+.logo-img {
+    height: 32px;
+    display: block;
+}
+
+.restaurant-photo {
+    width: 100%;
+    height: 275px;
+    overflow: hidden;
+}
+
+.restaurant-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* fills */
+    display: block;
+}
