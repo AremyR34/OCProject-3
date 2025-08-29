@@ -1,111 +1,96 @@
-/* ===== Theme ===== */
+/* ===== Theme Colors ===== */
 :root {
     --mint-green: #99e2d0;
     --light-blue: #eafBff;
     --sky: #89c8fa;
     --soft-blue: #c5e2f8;
     --pale-blue: #d5f0f8;
+    --purple: #9356DC;
+    --pink: #FF79DA;
+    --dark-gray: #353535;
+    --text-gray: #666;
+}
 
+/* ===== Base Reset ===== */
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: 'Roboto', sans-serif;
     background: #fff;
+    color: #111;
 }
 
-/* constrain page width on mobile mock (≈ 375–430px) */
-main,
-.footer__inner {
+/* ===== Page Wrapper (375px centered) ===== */
+.page {
     width: 100%;
     max-width: 375px;
-    /* your mock column */
-    margin-inline: auto;
-    padding-inline: 16px;
-    /* page gutters match mock */
+    /* Figma mobile width */
+    margin: 0 auto;
+    background: #fff;
 }
 
-/* --- HEADER (mobile) --- */
+/* ===== Header ===== */
 .header {
-    position: sticky;
-    /* like the mock, keeps it visible */
-    top: 0;
-    z-index: 10;
+    height: 60px;
     display: grid;
     place-items: center;
-    /* centers the logo perfectly */
     background: #fff;
-    padding-block: 13px;
-    /* mock shows ~13px top & bottom */
     box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
-    /* soft divider shadow */
 }
 
-/* SVG logo sizing (matches visual weight from mock) */
 .logo-img {
     height: 32px;
-    /* try 30–34px depending on your SVG */
-    width: auto;
     display: block;
 }
 
-/* container width (same as header area) */
-main {
-    width: 100%;
-    max-width: 375px;
-    /* your mock column */
-    margin-inline: auto;
-}
-
-/* Location bar */
+/* ===== Location Bar ===== */
 .location {
     height: 50px;
-    /* Figma: H 50px */
     background: #ededed;
-    /* soft gray strip */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* center the whole row */
     gap: 10px;
-    /* space between icon/text */
     border-top: 1px solid #e2e2e2;
-    /* subtle top line (mock has divider) */
     border-bottom: 1px solid #e2e2e2;
+    margin: 0 16px;
+    /* gutters */
 }
 
 .location__icon {
     width: 17px;
     height: 17px;
-    /* Figma: 17px */
     opacity: 0.9;
 }
 
 .location__text {
     margin: 0;
     font-weight: 500;
-    /* semi-bold like mock */
     color: #3a3a3a;
     letter-spacing: 0.1px;
-    /* tiny polish for readability */
 }
 
-/* Discover section */
+/* ===== Discover Section ===== */
 .discover-section {
     text-align: center;
     padding: 28px 24px 36px;
+    margin: 0 16px;
 }
 
 .discover-section__title {
     margin: 0 0 12px;
     font-weight: 700;
     font-size: 24px;
-    line-height: 100%;
+    line-height: 1.2;
 }
 
 .discover-section__subtitle {
     margin: 0 0 22px;
-    color: #666;
+    color: var(--text-gray);
     font-size: 16px;
     line-height: 1.5;
 }
@@ -123,9 +108,8 @@ main {
 
 .btn--primary {
     color: #fff;
-    background: linear-gradient(180deg, #FF79DA, #9356DC);
-    box-shadow:
-        0 8px 18px rgba(147, 86, 220, 0.25),
+    background: linear-gradient(180deg, var(--pink), var(--purple));
+    box-shadow: 0 8px 18px rgba(147, 86, 220, 0.25),
         0 2px 4px rgba(0, 0, 0, 0.12);
     transition: transform 0.08s ease;
 }
@@ -134,6 +118,7 @@ main {
     transform: translateY(1px);
 }
 
+/* ===== How It Works ===== */
 .how-section__title {
     font-size: 22px;
     font-weight: 700;
@@ -148,10 +133,8 @@ main {
     gap: 16px;
 }
 
-/* shared pill */
 .how {
     --n: "1";
-    /* default; overridden below */
     position: relative;
     display: grid;
     grid-template-columns: 44px 1fr;
@@ -163,7 +146,6 @@ main {
     box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
 
-/* number bubble using the class-based variable */
 .how::before {
     content: var(--n);
     position: absolute;
@@ -175,13 +157,12 @@ main {
     border-radius: 999px;
     display: grid;
     place-items: center;
-    background: #9356DC;
+    background: var(--purple);
     color: #fff;
     font-weight: 700;
     font-size: 14px;
 }
 
-/* per-step number */
 .how-1 {
     --n: "1";
 }
@@ -194,12 +175,10 @@ main {
     --n: "3";
 }
 
-/* icon + text */
 .how__icon {
     width: 22px;
     height: 22px;
     display: block;
-    opacity: .95;
 }
 
 .how__text {
@@ -207,28 +186,21 @@ main {
     color: #1b1b1b;
 }
 
-/* --- Restaurants (mobile first) --- */
+/* ===== Restaurants ===== */
 .restaurants {
-    max-width: 375px;
-    /* keep the column tight like the mock */
-    margin: 0 auto 24px;
+    margin: 0 16px 24px;
 }
 
 .section-title {
     font-size: 22px;
     font-weight: 700;
-    margin: 18px 16px 12px;
-    /* same side gutters as other sections */
+    margin: 18px 0 12px;
 }
 
-/* Card shell */
 .card {
     width: 340px;
-    /* fixed Figma width */
     height: 251px;
-    /* fixed Figma height */
     margin: 0 auto 16px;
-    /* center card horizontally, 16px spacing below */
     background: #fff;
     border-radius: 15px;
     overflow: hidden;
@@ -237,62 +209,53 @@ main {
     flex-direction: column;
 }
 
-
 .card__media {
     position: relative;
     height: 190px;
-    /* per Figma */
     overflow: hidden;
+    margin: 0;
 }
 
 .card__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* crop like the mock */
+    object-position: center;
+    display: block;
 }
 
-/* "New" badge */
 .badge {
     position: absolute;
-    width: 80px;
-    height: 29px;
     top: 12px;
     right: 12px;
-    background: #99e2d0;
-    /* mint */
+    background: var(--mint-green);
     color: #1a7a66;
     font-weight: 500;
     font-size: 14px;
     padding: 6px 10px;
-    border-radius: 2px;
+    border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
 }
 
-/* Content row */
 .card__body {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 14px 14px 16px 16px;
-    /* tiny left bias like the mock */
 }
 
 .card__title {
     margin: 0 0 4px;
     font-size: 18px;
-    /* “Kitchen West” size */
     font-weight: 700;
-    color: #111;
 }
 
 .card__subtitle {
     margin: 0;
-    color: #686868;
     font-size: 14px;
+    color: #686868;
 }
 
-/* Heart button */
 .heart {
     background: none;
     border: none;
@@ -303,26 +266,26 @@ main {
     justify-content: center;
 }
 
-/* Footer wrapper */
-.footer {
-    background: #353535;
-    /* dark background */
-    color: #fff;
-    padding: 24px 16px 40px;
-    width: 100%;
-    max-width: 375px;
-    /* keep it aligned with your mock */
-    margin: 0 auto;
+.heart__icon {
+    width: 22px;
+    height: 22px;
+    display: block;
 }
 
-/* Brand */
+/* ===== Footer ===== */
+.footer {
+    background: var(--dark-gray);
+    color: #fff;
+    padding: 24px 16px 40px;
+    margin: 0 16px;
+}
+
 .footer__brand {
     font-family: 'Shrikhand', cursive;
     font-size: 22px;
     margin: 0 0 16px;
 }
 
-/* Links list */
 .footer__links {
     list-style: none;
     margin: 0;
@@ -338,14 +301,12 @@ main {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* space between icon and text */
 }
 
 .footer__links a:hover {
     text-decoration: underline;
 }
 
-/* Icons */
 .footer__icon {
     width: 15px;
     height: 15px;
