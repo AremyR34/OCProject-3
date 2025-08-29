@@ -223,15 +223,21 @@ main {
 
 /* Card shell */
 .card {
+    width: 340px;
+    /* fixed Figma width */
+    height: 251px;
+    /* fixed Figma height */
+    margin: 0 auto 16px;
+    /* center card horizontally, 16px spacing below */
     background: #fff;
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
-    margin: 0 16px 16px;
-    /* 16px gutters + bottom spacing */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .10);
+    display: flex;
+    flex-direction: column;
 }
 
-/* Media area */
+
 .card__media {
     position: relative;
     height: 190px;
@@ -249,15 +255,17 @@ main {
 /* "New" badge */
 .badge {
     position: absolute;
+    width: 80px;
+    height: 29px;
     top: 12px;
     right: 12px;
     background: #99e2d0;
     /* mint */
     color: #1a7a66;
-    font-weight: 700;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 14px;
     padding: 6px 10px;
-    border-radius: 6px;
+    border-radius: 2px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
 }
 
@@ -286,15 +294,11 @@ main {
 
 /* Heart button */
 .heart {
-    width: 36px;
-    height: 36px;
-    display: grid;
-    place-items: center;
-    border-radius: 999px;
-    background: #f4f4f4;
-    color: #555;
-    font-size: 20px;
-    line-height: 1;
+    background: none;
     border: none;
+    padding: 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
