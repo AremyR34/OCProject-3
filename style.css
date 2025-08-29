@@ -1,3 +1,13 @@
+/* ===== Theme ===== */
+:root {
+    --mint-green: #99e2d0;
+    --light-blue: #eafBff;
+    --sky: #89c8fa;
+    --soft-blue: #c5e2f8;
+    --pale-blue: #d5f0f8;
+
+}
+
 .header {
     display: flex;
     justify-content: center;
@@ -11,4 +21,15 @@
     padding-right: 89px;
     padding-top: 14px;
     padding-bottom: 13px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #ececec;
+    color: #333;
+    padding: 12px 0;
+    box-shadow: inset 0 1px 0 #d8d8d8;
 }
