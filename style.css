@@ -206,3 +206,95 @@ main {
     font-weight: 600;
     color: #1b1b1b;
 }
+
+/* --- Restaurants (mobile first) --- */
+.restaurants {
+    max-width: 375px;
+    /* keep the column tight like the mock */
+    margin: 0 auto 24px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 18px 16px 12px;
+    /* same side gutters as other sections */
+}
+
+/* Card shell */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    margin: 0 16px 16px;
+    /* 16px gutters + bottom spacing */
+}
+
+/* Media area */
+.card__media {
+    position: relative;
+    height: 190px;
+    /* per Figma */
+    overflow: hidden;
+}
+
+.card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* crop like the mock */
+}
+
+/* "New" badge */
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #99e2d0;
+    /* mint */
+    color: #1a7a66;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+/* Content row */
+.card__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 14px 16px 16px;
+    /* tiny left bias like the mock */
+}
+
+.card__title {
+    margin: 0 0 4px;
+    font-size: 18px;
+    /* “Kitchen West” size */
+    font-weight: 700;
+    color: #111;
+}
+
+.card__subtitle {
+    margin: 0;
+    color: #686868;
+    font-size: 14px;
+}
+
+/* Heart button */
+.heart {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: #f4f4f4;
+    color: #555;
+    font-size: 20px;
+    line-height: 1;
+    border: none;
+    cursor: pointer;
+}
