@@ -133,3 +133,76 @@ main {
 .btn--primary:active {
     transform: translateY(1px);
 }
+
+.how-section__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 18px 16px 12px;
+}
+
+.how-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 16px 24px;
+    display: grid;
+    gap: 16px;
+}
+
+/* shared pill */
+.how {
+    --n: "1";
+    /* default; overridden below */
+    position: relative;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    align-items: center;
+    gap: 12px;
+    background: #f4f4f4;
+    border-radius: 16px;
+    padding: 18px 16px 18px 22px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+}
+
+/* number bubble using the class-based variable */
+.how::before {
+    content: var(--n);
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: #9356DC;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* per-step number */
+.how-1 {
+    --n: "1";
+}
+
+.how-2 {
+    --n: "2";
+}
+
+.how-3 {
+    --n: "3";
+}
+
+/* icon + text */
+.how__icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+    opacity: .95;
+}
+
+.how__text {
+    font-weight: 600;
+    color: #1b1b1b;
+}
