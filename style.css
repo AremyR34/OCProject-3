@@ -8,19 +8,39 @@
 
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    direction: column;
-    width: 375px;
-    height: 63px;
+/* constrain page width on mobile mock (≈ 375–430px) */
+main,
+.footer__inner {
+    width: 100%;
+    max-width: 460px;
+    /* your mock column */
+    margin-inline: auto;
+    padding-inline: 16px;
+    /* page gutters match mock */
 }
 
-.header img {
-    padding-left: 89px;
-    padding-right: 89px;
-    padding-top: 14px;
-    padding-bottom: 13px;
+/* --- HEADER (mobile) --- */
+.header {
+    position: sticky;
+    /* like the mock, keeps it visible */
+    top: 0;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    /* centers the logo perfectly */
+    background: #fff;
+    padding-block: 13px;
+    /* mock shows ~13px top & bottom */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    /* soft divider shadow */
+}
+
+/* SVG logo sizing (matches visual weight from mock) */
+.logo-img {
+    height: 32px;
+    /* try 30–34px depending on your SVG */
+    width: auto;
+    display: block;
 }
 
 .location {
