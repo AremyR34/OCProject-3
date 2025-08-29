@@ -15,191 +15,196 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header class="header">
-      <div>
-        <img
-          src="./public/images/ohmyfood.svg"
-          alt="logoimg"
-          class="logo-img"
-        />
-      </div>
-    </header>
-    <main>
-      <!-- location -->
-      <section class="location" aria-label="Current location">
-        <img
-          src="./public/images/iconpin.svg"
-          alt=""
-          aria-hidden="true"
-          class="location__icon"
-        />
-        <p class="location__text">Islington, London</p>
-      </section>
+    <div class="page">
+      <header class="header">
+        <div>
+          <img
+            src="./public/images/ohmyfood.svg"
+            alt="logoimg"
+            class="logo-img"
+          />
+        </div>
+      </header>
+      <main>
+        <!-- location -->
+        <section class="location" aria-label="Current location">
+          <img
+            src="./public/images/iconpin.svg"
+            alt=""
+            aria-hidden="true"
+            class="location__icon"
+          />
+          <p class="location__text">Islington, London</p>
+        </section>
 
-      <section class="discover-section">
-        <h1 class="discover-section__title">Book the meal you want</h1>
-        <p class="discover-section__subtitle">
-          Discover our carefully selected high-end<br />restaurants
-        </p>
-        <button class="btn btn--primary" type="button">
-          Explore our restaurants
-        </button>
-      </section>
+        <section class="discover-section">
+          <h1 class="discover-section__title">Book the meal you want</h1>
+          <p class="discover-section__subtitle">
+            Discover our carefully selected high-end<br />restaurants
+          </p>
+          <button class="btn btn--primary" type="button">
+            Explore our restaurants
+          </button>
+        </section>
 
-      <!-- How it works Section -->
-      <section class="how-section" aria-labelledby="how-title">
-        <h2 id="how-title" class="how-section__title">How it works</h2>
+        <!-- How it works Section -->
+        <section class="how-section" aria-labelledby="how-title">
+          <h2 id="how-title" class="how-section__title">How it works</h2>
 
-        <ol class="how-list">
-          <li class="how how-1">
-            <img
-              src="./public/images/mobile-screen-button.svg"
-              alt=""
-              aria-hidden="true"
-              class="how__icon"
-            />
-            <span class="how__text">Choose a restaurant</span>
-          </li>
+          <ol class="how-list">
+            <li class="how how-1">
+              <img
+                src="./public/images/mobile-screen-button.svg"
+                alt=""
+                aria-hidden="true"
+                class="how__icon"
+              />
+              <span class="how__text">Choose a restaurant</span>
+            </li>
 
-          <li class="how how-2">
-            <img
-              src="./public/images/list-ul.svg"
-              alt=""
-              aria-hidden="true"
-              class="how__icon"
-            />
-            <span class="how__text">Build your meal</span>
-          </li>
+            <li class="how how-2">
+              <img
+                src="./public/images/list-ul.svg"
+                alt=""
+                aria-hidden="true"
+                class="how__icon"
+              />
+              <span class="how__text">Build your meal</span>
+            </li>
 
-          <li class="how how-3">
-            <img
-              src="./public/images//store.svg"
-              alt=""
-              aria-hidden="true"
-              class="how__icon"
-            />
-            <span class="how__text"
-              >Enjoy your meal at the <br />restaurant</span
-            >
-          </li>
-        </ol>
-      </section>
+            <li class="how how-3">
+              <img
+                src="./public/images//store.svg"
+                alt=""
+                aria-hidden="true"
+                class="how__icon"
+              />
+              <span class="how__text"
+                >Enjoy your meal at the <br />restaurant</span
+              >
+            </li>
+          </ol>
+        </section>
 
-      <!-- Restaurants list -->
-      <section class="restaurants" aria-labelledby="restaurants-title">
-        <h2 id="restaurants-title" class="section-title">Restaurants</h2>
+        <!-- Restaurants list -->
+        <section class="restaurants" aria-labelledby="restaurants-title">
+          <h2 id="restaurants-title" class="section-title">Restaurants</h2>
 
-        <article class="card">
-          <figure class="card__media">
-            <img src="./public/images/kitchenwest.jpg" alt="Kitchen West" />
-          </figure>
-          <div class="card__body">
-            <div>
-              <h3 class="card__title">Kitchen West</h3>
-              <p class="card__subtitle">Angel</p>
+          <article class="card">
+            <figure class="card__media">
+              <img src="./public/images/kitchenwest.jpg" alt="Kitchen West" />
+            </figure>
+            <div class="card__body">
+              <div>
+                <h3 class="card__title">Kitchen West</h3>
+                <p class="card__subtitle">Angel</p>
+              </div>
+              <button class="heart" aria-label="Save Kitchen West">
+                <img
+                  src="./public/images/card-like.svg"
+                  alt="save button"
+                  aria-hidden="true"
+                  class="heart__icon"
+                />
+              </button>
             </div>
-            <button class="heart" aria-label="Save Kitchen West">
-              <img
-                src="./public/images/card-like.svg"
-                alt="save button"
-                aria-hidden="true"
-                class="heart__icon"
-              />
-            </button>
-          </div>
-        </article>
-        <article class="card">
-          <figure class="card__media">
-            <img src="./public/images/elderflower.jpg" alt="Elderflower" />
-            <span class="badge" aria-label="New restaurant">New</span>
-          </figure>
-          <div class="card__body">
-            <div>
-              <h3 class="card__title">Elderflower</h3>
-              <p class="card__subtitle">Old Street</p>
+          </article>
+          <article class="card">
+            <figure class="card__media">
+              <img src="./public/images/elderflower.jpg" alt="Elderflower" />
+              <span class="badge" aria-label="New restaurant">New</span>
+            </figure>
+            <div class="card__body">
+              <div>
+                <h3 class="card__title">Elderflower</h3>
+                <p class="card__subtitle">Old Street</p>
+              </div>
+              <button class="heart" aria-label="Save Kitchen West">
+                <img
+                  src="./public/images/card-likefilled.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="heart__icon"
+                />
+              </button>
             </div>
-            <button class="heart" aria-label="Save Kitchen West">
-              <img
-                src="./public/images/card-likefilled.svg"
-                alt=""
-                aria-hidden="true"
-                class="heart__icon"
-              />
-            </button>
-          </div>
-        </article>
+          </article>
 
-        <article class="card">
-          <figure class="card__media">
-            <img src="./public/images/shoreditchcanteen.jpg" alt="Shoreditch" />
-          </figure>
-          <div class="card__body">
-            <div>
-              <h3 class="card__title">Shoreditch Canteen</h3>
-              <p class="card__subtitle">Shoreditch</p>
-            </div>
-            <button class="heart" aria-label="Save Kitchen West">
+          <article class="card">
+            <figure class="card__media">
               <img
-                src="./public/images/card-like.svg"
-                alt=""
-                aria-hidden="true"
-                class="heart__icon"
+                src="./public/images/shoreditchcanteen.jpg"
+                alt="Shoreditch"
               />
-            </button>
-          </div>
-        </article>
+            </figure>
+            <div class="card__body">
+              <div>
+                <h3 class="card__title">Shoreditch Canteen</h3>
+                <p class="card__subtitle">Shoreditch</p>
+              </div>
+              <button class="heart" aria-label="Save Kitchen West">
+                <img
+                  src="./public/images/card-like.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="heart__icon"
+                />
+              </button>
+            </div>
+          </article>
 
-        <article class="card">
-          <figure class="card__media">
-            <img src="./public/images/thebayleaf.jpg" alt="The Bay Leaf" />
-          </figure>
-          <div class="card__body">
-            <div>
-              <h3 class="card__title">The Bay Leaf</h3>
-              <p class="card__subtitle">Hoxton</p>
+          <article class="card">
+            <figure class="card__media">
+              <img src="./public/images/thebayleaf.jpg" alt="The Bay Leaf" />
+            </figure>
+            <div class="card__body">
+              <div>
+                <h3 class="card__title">The Bay Leaf</h3>
+                <p class="card__subtitle">Hoxton</p>
+              </div>
+              <button class="heart" aria-label="Save Kitchen West">
+                <img
+                  src="./public/images/card-like.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="heart__icon"
+                />
+              </button>
             </div>
-            <button class="heart" aria-label="Save Kitchen West">
-              <img
-                src="./public/images/card-like.svg"
-                alt=""
-                aria-hidden="true"
-                class="heart__icon"
-              />
-            </button>
-          </div>
-        </article>
-      </section>
-    </main>
-    <footer class="footer" role="contentinfo">
-      <div class="footer__inner">
-        <p class="footer__brand">ohmyfood</p>
-        <ul class="footer__links">
-          <li>
-            <a href="#">
-              <img
-                src="./public/images/forkandknife.svg"
-                alt=""
-                aria-hidden="true"
-                class="footer__icon"
-              />
-              Suggest a restaurant
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img
-                src="./public/images/handshakeicon.svg"
-                alt=""
-                aria-hidden="true"
-                class="footer__icon"
-              />
-              Become a partner
-            </a>
-          </li>
-          <li><a href="#">Legal notice</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </footer>
+          </article>
+        </section>
+      </main>
+      <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+          <p class="footer__brand">ohmyfood</p>
+          <ul class="footer__links">
+            <li>
+              <a href="#">
+                <img
+                  src="./public/images/forkandknife.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="footer__icon"
+                />
+                Suggest a restaurant
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./public/images/handshakeicon.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="footer__icon"
+                />
+                Become a partner
+              </a>
+            </li>
+            <li><a href="#">Legal notice</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
