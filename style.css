@@ -89,3 +89,47 @@ main {
     letter-spacing: 0.1px;
     /* tiny polish for readability */
 }
+
+/* Discover section */
+.discover-section {
+    text-align: center;
+    padding: 28px 24px 36px;
+}
+
+.discover-section__title {
+    margin: 0 0 12px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+}
+
+.discover-section__subtitle {
+    margin: 0 0 22px;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* CTA button */
+.btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border: 0;
+    border-radius: 999px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.btn--primary {
+    color: #fff;
+    background: linear-gradient(180deg, #FF79DA, #9356DC);
+    box-shadow:
+        0 8px 18px rgba(147, 86, 220, 0.25),
+        0 2px 4px rgba(0, 0, 0, 0.12);
+    transition: transform 0.08s ease;
+}
+
+.btn--primary:active {
+    transform: translateY(1px);
+}
