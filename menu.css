@@ -169,3 +169,61 @@
     color: #111;
     white-space: nowrap;
 }
+
+
+/* Footer */
+.footer {
+    width: 100%;
+    max-width: 375px;
+    /* keep aligned with page width */
+    margin: 0 auto;
+    background: #353535;
+    /* dark gray from your mock */
+    color: #fff;
+    padding: 24px 16px 40px;
+    box-sizing: border-box;
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* space between brand and links */
+}
+
+/* Brand */
+.footer__brand {
+    font-family: 'Shrikhand', cursive;
+    font-size: 22px;
+    margin: 0;
+}
+
+/* Links list */
+.footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.footer__links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* space between icon and text */
+}
+
+.footer__links a:hover {
+    text-decoration: underline;
+}
+
+/* Icons */
+.footer__icon {
+    width: 15px;
+    height: 15px;
+    display: block;
+}
