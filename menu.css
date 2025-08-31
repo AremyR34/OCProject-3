@@ -49,6 +49,20 @@
     display: block;
 }
 
+.menu-sheet {
+    width: 100%;
+    max-width: 375px;
+    margin: -22px auto 0;
+    /* pull it up so it overlaps the photo */
+    background: #fff;
+    border-radius: 24px 24px 0 0;
+    /* curve only the top corners */
+    box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.03),
+        0 8px 24px rgba(0, 0, 0, 0.10);
+    padding: 16px 16px 24px;
+    box-sizing: border-box;
+}
+
 /* Restaurant name row */
 .restaurant-name {
     width: 100%;
@@ -81,4 +95,77 @@
     /* adjust to match your mock */
     height: 22px;
     display: block;
+}
+
+/* ===== MENU SECTIONS ===== */
+.menu {
+    width: 100%;
+    padding: 0 16px 24px;
+}
+
+/* Headings (STARTERS / MAINS / DESSERTS) */
+.menu-heading {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #777;
+    margin: 16px 0 12px;
+    border-bottom: 2px solid var(--mint-green);
+    /* underline in your mock */
+    padding-bottom: 4px;
+    width: fit-content;
+    /* keeps underline only as wide as text */
+}
+
+/* ===== DISH CARDS ===== */
+.dish {
+    width: 349px;
+    height: 69px;
+
+    background: #fff;
+    border-radius: 15px;
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px;
+    /* Figma: 15px all around */
+    box-sizing: border-box;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dish__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.dish__name {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111;
+}
+
+.dish__desc {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Price aligned to the right */
+.dish__price {
+    margin-left: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #111;
+    white-space: nowrap;
 }
