@@ -1,31 +1,60 @@
-/* Header with back button */
+:root {
+    --mint: #99e2d0;
+    --purple: #9356DC;
+    --pink: #FF79DA;
+    --footer: #353535;
+}
+
+/* ======================
+     Base + Page Layout
+  ====================== */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #111;
+    background: #f6f6f6;
+    /* light gray behind white sheet */
+}
+
+.page {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+}
+
+/* ======================
+     Header
+  ====================== */
 .header {
     position: relative;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* centers logo */
     background: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
 }
 
-/* Back button sits absolutely on the left */
+/* Back button */
 .back-btn {
     position: absolute;
     left: 16px;
-    /* gutter */
+    top: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 30px;
-    height: 30px;
 }
 
 .back-icon {
-    width: 30px;
-    /* size of SVG */
-    height: 30px;
+    width: 22px;
+    height: 22px;
     display: block;
 }
 
@@ -35,9 +64,12 @@
     display: block;
 }
 
+/* ======================
+     Restaurant Photo
+  ====================== */
 .restaurant-photo {
     width: 100%;
-    height: 275px;
+    height: 190px;
     overflow: hidden;
 }
 
@@ -45,36 +77,40 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* fills */
     display: block;
 }
 
+/* ======================
+     Menu Sheet (curved top)
+  ====================== */
 .menu-sheet {
     width: 100%;
-    max-width: 375px;
     margin: -22px auto 0;
-    /* pull it up so it overlaps the photo */
+    /* overlap the photo */
     background: #fff;
     border-radius: 24px 24px 0 0;
-    /* curve only the top corners */
-    box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.03),
-        0 8px 24px rgba(0, 0, 0, 0.10);
-    padding: 16px 16px 24px;
+    /* curved top corners */
+    box-shadow:
+        0 -2px 0 rgba(0, 0, 0, .03),
+        0 8px 24px rgba(0, 0, 0, .10);
+    padding: 16px;
     box-sizing: border-box;
 }
 
-/* Restaurant name row */
+/* ======================
+     Restaurant Name Row
+  ====================== */
 .restaurant-name {
-    width: 100%;
-    padding: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 8px;
 }
 
 .restaurant-name h1 {
     font-family: 'Shrikhand', cursive;
-    font-size: 22px;
+    font-size: 28px;
+    line-height: 1.1;
     margin: 0;
 }
 
@@ -89,96 +125,126 @@
     justify-content: center;
 }
 
-/* Heart icon (SVG) */
 .heart__icon {
     width: 22px;
-    /* adjust to match your mock */
     height: 22px;
     display: block;
 }
 
-/* ===== MENU SECTIONS ===== */
+/* ======================
+     Menu Sections
+  ====================== */
 .menu {
-    width: 100%;
-    padding: 0 16px 24px;
+    padding: 0;
+    margin-top: 18px;
 }
 
-/* Headings (STARTERS / MAINS / DESSERTS) */
 .menu-heading {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    margin: 0 0 14px;
+    font-size: 13px;
+    font-weight: 700;
     text-transform: uppercase;
-    color: #777;
-    margin: 16px 0 12px;
-    border-bottom: 2px solid var(--mint-green);
-    /* underline in your mock */
-    padding-bottom: 4px;
-    width: fit-content;
-    /* keeps underline only as wide as text */
+    letter-spacing: 0.12em;
+    color: #2d2d2d;
+    width: max-content;
+    position: relative;
 }
 
-/* ===== DISH CARDS ===== */
+/* Mint underline */
+.menu-heading::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 44px;
+    margin-top: 6px;
+    background: var(--mint);
+    border-radius: 2px;
+}
+
+/* ======================
+     Dish Cards
+  ====================== */
 .dish {
     width: 349px;
     height: 69px;
-
+    margin: 0 auto 12px;
     background: #fff;
     border-radius: 15px;
-    margin-bottom: 12px;
+    padding: 15px;
+    box-sizing: border-box;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 15px;
-    /* Figma: 15px all around */
-    box-sizing: border-box;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
 
 .dish__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 1;
     min-width: 0;
 }
 
 .dish__name {
     margin: 0 0 4px;
-    font-size: 16px;
     font-weight: 700;
+    font-size: 16px;
     line-height: 1.2;
     color: #111;
 }
 
 .dish__desc {
     margin: 0;
+    font-weight: 400;
     font-size: 14px;
-    color: #666;
     line-height: 1.4;
+    color: #666;
 }
 
-/* Price aligned to the right */
 .dish__price {
     margin-left: 12px;
     font-weight: 700;
     font-size: 14px;
-    color: #111;
     white-space: nowrap;
+    color: #111;
 }
 
+/* ======================
+     Order Button
+  ====================== */
+.order-row {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 6px;
+}
 
-/* Footer */
+.btn {
+    padding: 14px 22px;
+    border: 0;
+    border-radius: 999px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.btn--primary {
+    color: #fff;
+    background: linear-gradient(180deg, var(--pink), var(--purple));
+    box-shadow:
+        0 8px 18px rgba(147, 86, 220, .25),
+        0 2px 4px rgba(0, 0, 0, .12);
+}
+
+/* ======================
+     Footer
+  ====================== */
 .footer {
     width: 100%;
     max-width: 375px;
-    /* keep aligned with page width */
     margin: 0 auto;
-    background: #353535;
-    /* dark gray from your mock */
+    background: var(--footer);
     color: #fff;
     padding: 24px 16px 40px;
     box-sizing: border-box;
@@ -188,10 +254,8 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /* space between brand and links */
 }
 
-/* Brand */
 .footer__brand {
     font-family: 'Shrikhand', cursive;
     font-size: 22px;
