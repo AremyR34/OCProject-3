@@ -48,3 +48,37 @@
     /* fills */
     display: block;
 }
+
+/* Restaurant name row */
+.restaurant-name {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.restaurant-name h1 {
+    font-family: 'Shrikhand', cursive;
+    font-size: 22px;
+    margin: 0;
+}
+
+/* Heart button */
+.heart {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Heart icon (SVG) */
+.heart__icon {
+    width: 22px;
+    /* adjust to match your mock */
+    height: 22px;
+    display: block;
+}
