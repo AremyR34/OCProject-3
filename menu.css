@@ -228,6 +228,7 @@ body {
     border: 0;
     border-radius: 999px;
     font-weight: 500;
+    font-size: 16px;
     line-height: 1;
     cursor: pointer;
 }
