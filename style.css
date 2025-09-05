@@ -212,7 +212,6 @@ body {
 
 .card__media {
     position: relative;
-    height: 190px;
     overflow: hidden;
     margin: 0;
 }
@@ -221,7 +220,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center bottom;
+    /* <— shift crop focus downward */
     display: block;
 }
 
@@ -253,8 +253,9 @@ body {
 
 .card__subtitle {
     margin: 0;
-    font-size: 14px;
-    color: #686868;
+    font-size: 17px;
+    font-weight: 300;
+    color: #000000;
 }
 
 .heart {
@@ -273,26 +274,41 @@ body {
     display: block;
 }
 
-/* ===== Footer ===== */
+/* ======================
+   Footer
+====================== */
 .footer {
+    width: 100%;
+    max-width: 375px;
+    max-height: 186px;
+    margin-top: 60px;
     background: var(--dark-gray);
     color: #fff;
-    padding: 24px 16px 40px;
-    margin: 0 16px;
+    padding: 22px 25px;
+    box-sizing: border-box;
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .footer__brand {
     font-family: 'Shrikhand', cursive;
-    font-size: 22px;
-    margin: 0 0 16px;
+    font-size: 18px;
+    /* matches your menu pages */
+    font-weight: 400;
+    margin: 0;
 }
 
+/* Links list */
 .footer__links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 10px;
+    gap: 7px;
 }
 
 .footer__links a {
@@ -302,12 +318,15 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    /* space between icon and text */
+    /* space between icon and text */
 }
 
 .footer__links a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
+/* Icons */
 .footer__icon {
     width: 15px;
     height: 15px;
