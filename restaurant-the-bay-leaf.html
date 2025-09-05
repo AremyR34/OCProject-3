@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Bay Leaf • Ohmyfood</title>
+
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Shrikhand&display=swap"
+    />
+
+    <!-- Menu styles only -->
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Header -->
+      <header class="header">
+        <a href="index.html" class="back-btn" aria-label="Go back">
+          <img
+            src="./public/images/icon-go-back.svg"
+            alt=""
+            class="back-icon"
+            aria-hidden="true"
+          />
+        </a>
+        <img
+          src="./public/images/ohmyfood.svg"
+          alt="Ohmyfood"
+          class="logo-img"
+        />
+      </header>
+
+      <!-- Restaurant photo -->
+      <div class="restaurant-photo">
+        <img
+          src="./public/images/thebayleaf.jpg"
+          alt="elderflower restaurant photo"
+        />
+      </div>
+
+      <!-- Curved white sheet -->
+      <div class="menu-sheet">
+        <!-- Name row -->
+        <section class="restaurant-name">
+          <h1>The Bay Leaf</h1>
+          <button class="heart" aria-label="Save">
+            <img
+              src="./public/images/card-like.svg"
+              alt=""
+              class="heart__icon"
+            />
+          </button>
+        </section>
+
+        <!-- Starters -->
+        <section class="menu">
+          <h2 class="menu-heading">Starters</h2>
+
+          <article class="dish">
+            <div class="dish__info">
+              <h3 class="dish__name">Tuna tartare</h3>
+              <p class="dish__desc">With yuzu seasoning</p>
+            </div>
+            <span class="dish__price">£25</span>
+          </article>
+
+          <article class="dish">
+            <div class="dish__info">
+              <h3 class="dish__name">Crispy lobster bon-bon</h3>
+              <p class="dish__desc">With a vegetable selection</p>
+            </div>
+            <span class="dish__price">£35</span>
+          </article>
+
+          <article class="dish">
+            <div class="dish__info">
+              <h3 class="dish__name">Creamy porcini soup</h3>
+              <p class="dish__desc">With truffle shavings</p>
+            </div>
+            <span class="dish__price">£20</span>
+          </article>
+        </section>
+
+        <!-- Mains -->
+        <section class="menu">
+          <h2 class="menu-heading">Mains</h2>
+
+          <article class="dish">
+            <div class="dish__info">
+              <h3 class="dish__name">Herb roast chicken</h3>
+              <p class="dish__desc">With truffle cream</p>
+            </div>
+            <span class="dish__price">£40</span>
+          </article>
+
+          <article class="dish">
+            <div class="dish__info">
+              <h3 class="dish__name">Roasted lobster</h3>
+              <p class="dish__desc">With seasonal vegetables</p>
+            </div>
+            <span class="dish__price">£35</span>
+          </article>
+
+          <article class="dish">
+            <div class="dish__info">
+              <h3 class="dish__name">Aberdeen Angus prime rib</h3>
+              <p class="dish__desc">With parsnip mash</p>
+            </div>
+            <span class="dish__price">£44</span>
+          </article>
+        </section>
+
+        <!-- Desserts -->
+        <section class="menu">
+          <h2 class="menu-heading">Desserts</h2>
+
+          <article class="dish">
+            <div class="dish__info">
+              <h3 class="dish__name">Assortment of desserts</h3>
+              <p class="dish__desc">With lime biscuit</p>
+            </div>
+            <span class="dish__price">£18</span>
+          </article>
+
+          <article class="dish">
+            <div class="dish__info">
+              <h3 class="dish__name">Crème brûlée</h3>
+              <p class="dish__desc">With forest fruits</p>
+            </div>
+            <span class="dish__price">£22</span>
+          </article>
+
+          <article class="dish">
+            <div class="dish__info">
+              <h3 class="dish__name">Tiramisu</h3>
+              <p class="dish__desc">With hazelnuts</p>
+            </div>
+            <span class="dish__price">£23</span>
+          </article>
+        </section>
+
+        <!-- Order button -->
+        <div class="order-row">
+          <button class="btn btn--primary" type="button">Order</button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+          <p class="footer__brand">ohmyfood</p>
+          <ul class="footer__links">
+            <li>
+              <a href="#">
+                <img
+                  src="./public/images/forkandknife.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="footer__icon"
+                />
+                Suggest a restaurant
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./public/images/handshakeicon.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="footer__icon"
+                />
+                Become a partner
+              </a>
+            </li>
+            <li><a href="#">Legal notice</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
