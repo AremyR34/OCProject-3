@@ -189,13 +189,14 @@ body {
 
 /* ===== Restaurants ===== */
 .restaurants {
-    margin: 0 16px 24px;
+    background-color: #f6f6f6;
 }
 
 .section-title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
-    margin: 18px 0 12px;
+    padding-top: 50px;
+    margin: 18px 0px 20px 16px;
 }
 
 .card {
