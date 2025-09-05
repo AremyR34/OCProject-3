@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- =======================================================
+         META / FONTS / STYLES
+         ======================================================= -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ohmyfood</title>
+
+    <!-- Fonts: Roboto (UI text), Shrikhand (brand logo / headings) -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
@@ -12,21 +17,36 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Shrikhand:wght@400&display=swap"
     />
+
+    <!-- Site CSS -->
     <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
+    <!-- =======================================================
+         PAGE WRAPPER (keeps everything centered/max 375px)
+         ======================================================= -->
     <div class="page">
+      <!-- =====================================================
+           HEADER (Contains only the site logo)
+           ===================================================== -->
       <header class="header">
         <div>
           <img
             src="./public/images/ohmyfood.svg"
-            alt="logoimg"
+            alt="Ohmyfood logo"
             class="logo-img"
           />
         </div>
       </header>
+
+      <!-- =====================================================
+           MAIN CONTENT
+           ===================================================== -->
       <main>
-        <!-- location -->
+        <!-- ===================================================
+             LOCATION BAR
+             =================================================== -->
         <section class="location" aria-label="Current location">
           <img
             src="./public/images/iconpin.svg"
@@ -37,21 +57,30 @@
           <p class="location__text">Islington, London</p>
         </section>
 
+        <!-- ===================================================
+             DISCOVER SECTION
+             Title, subtitle, and button
+             =================================================== -->
         <section class="discover-section">
           <h1 class="discover-section__title">Book the meal you want</h1>
           <p class="discover-section__subtitle">
-            Discover our carefully selected high-end<br />restaurants
+            Discover our carefully selected high-end<br />
+            restaurants
           </p>
           <button class="btn btn--primary" type="button">
             Explore our restaurants
           </button>
         </section>
 
-        <!-- How it works Section -->
+        <!-- ===================================================
+             HOW IT WORKS SECTION
+             Ordered steps (1 → 2 → 3) with icons
+             =================================================== -->
         <section class="how-section" aria-labelledby="how-title">
           <h2 id="how-title" class="how-section__title">How it works</h2>
 
           <ol class="how-list">
+            <!-- Step 1 -->
             <li class="how how-1">
               <img
                 src="./public/images/mobile-screen-button.svg"
@@ -62,6 +91,7 @@
               <span class="how__text">Choose a restaurant</span>
             </li>
 
+            <!-- Step 2 -->
             <li class="how how-2">
               <img
                 src="./public/images/list-ul.svg"
@@ -72,24 +102,29 @@
               <span class="how__text">Build your meal</span>
             </li>
 
+            <!-- Step 3 -->
             <li class="how how-3">
               <img
-                src="./public/images//store.svg"
+                src="./public/images/store.svg"
                 alt=""
                 aria-hidden="true"
                 class="how__icon"
               />
-              <span class="how__text"
-                >Enjoy your meal at the <br />restaurant</span
-              >
+              <span class="how__text">
+                Enjoy your meal at the <br />restaurant
+              </span>
             </li>
           </ol>
         </section>
 
-        <!-- Restaurants list -->
+        <!-- ===================================================
+             RESTAURANTS LIST
+             4 restaurant cards with images, names, areas, and hearts
+             =================================================== -->
         <section class="restaurants" aria-labelledby="restaurants-title">
           <h2 id="restaurants-title" class="section-title">Restaurants</h2>
 
+          <!-- Card 1: Kitchen West -->
           <article class="card">
             <figure class="card__media">
               <img src="./public/images/kitchenwest.jpg" alt="Kitchen West" />
@@ -110,6 +145,8 @@
               </button>
             </div>
           </article>
+
+          <!-- Card 2: Elderflower -->
           <article class="card card--elderflower">
             <figure class="card__media">
               <img src="./public/images/elderflower.jpg" alt="Elderflower" />
@@ -120,10 +157,10 @@
                 <h3 class="card__title">Elderflower</h3>
                 <p class="card__subtitle">Old Street</p>
               </div>
-              <button class="heart" aria-label="Save Kitchen West">
+              <button class="heart" aria-label="Save Elderflower">
                 <img
                   src="./public/images/card-likefilled.svg"
-                  alt=""
+                  alt="filled save button"
                   aria-hidden="true"
                   class="heart__icon"
                 />
@@ -131,11 +168,12 @@
             </div>
           </article>
 
+          <!-- Card 3: Shoreditch Canteen -->
           <article class="card">
             <figure class="card__media">
               <img
                 src="./public/images/shoreditchcanteen.jpg"
-                alt="Shoreditch"
+                alt="Shoreditch Canteen"
               />
             </figure>
             <div class="card__body">
@@ -143,10 +181,10 @@
                 <h3 class="card__title">Shoreditch Canteen</h3>
                 <p class="card__subtitle">Shoreditch</p>
               </div>
-              <button class="heart" aria-label="Save Kitchen West">
+              <button class="heart" aria-label="Save Shoreditch Canteen">
                 <img
                   src="./public/images/card-like.svg"
-                  alt=""
+                  alt="save button"
                   aria-hidden="true"
                   class="heart__icon"
                 />
@@ -154,6 +192,7 @@
             </div>
           </article>
 
+          <!-- Card 4: The Bay Leaf -->
           <article class="card">
             <figure class="card__media">
               <img src="./public/images/thebayleaf.jpg" alt="The Bay Leaf" />
@@ -163,10 +202,10 @@
                 <h3 class="card__title">The Bay Leaf</h3>
                 <p class="card__subtitle">Hoxton</p>
               </div>
-              <button class="heart" aria-label="Save Kitchen West">
+              <button class="heart" aria-label="Save The Bay Leaf">
                 <img
                   src="./public/images/card-like.svg"
-                  alt=""
+                  alt="save button"
                   aria-hidden="true"
                   class="heart__icon"
                 />
@@ -176,7 +215,10 @@
         </section>
       </main>
 
-      <!-- Footer -->
+      <!-- =====================================================
+           FOOTER
+           Logo + navigation links
+           ===================================================== -->
       <footer class="footer" role="contentinfo">
         <div class="footer__inner">
           <p class="footer__brand">ohmyfood</p>
@@ -209,5 +251,6 @@
         </div>
       </footer>
     </div>
+    <!-- /.page -->
   </body>
 </html>
