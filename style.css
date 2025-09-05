@@ -315,7 +315,7 @@ body {
 .footer__brand {
     font-family: 'Shrikhand', cursive;
     font-size: 18px;
-    /* matches your menu pages */
+    /* matches menu pages */
     font-weight: 400;
     margin: 0;
 }
@@ -336,7 +336,6 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* space between icon and text */
     /* space between icon and text */
 }
 
