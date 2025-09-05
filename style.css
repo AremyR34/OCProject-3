@@ -225,17 +225,30 @@ body {
     display: block;
 }
 
+/* fine-tune just Elderflower */
+.card--elderflower .card__media img {
+    object-position: 50% 62%;
+}
+
 .badge {
     position: absolute;
     top: 12px;
     right: 12px;
+
+    width: 80px;
+    height: 29px;
+    line-height: 29px;
+    /* centers text vertically */
+
     background: var(--mint-green);
     color: #1a7a66;
-    font-weight: 500;
     font-size: 14px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    font-weight: 500;
+    text-align: center;
+
+    border-radius: 2px;
+    /* match Figma (not rounded pill) */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .card__body {
