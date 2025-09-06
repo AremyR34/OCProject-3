@@ -440,8 +440,6 @@ body {
         /* center inside 1440px page */
         column-gap: 100px;
         /* horizontal spacing */
-        row-gap: 50px;
-        /* vertical spacing */
     }
 
     /* Make the section title span both columns */
@@ -482,7 +480,7 @@ body {
     /* ---------- Footer bar ---------- */
     .footer {
         max-width: 100%;
-        padding: 30px 25px 30px 25px;
+        padding: 45px 25px 45px 25px;
     }
 
     .footer__inner {
@@ -492,15 +490,17 @@ body {
         /* keeps links centered */
         position: relative;
         /* allows logo absolute positioning */
+        gap: 30px;
     }
 
     /* Center the link group */
     .footer__links {
         display: flex;
-        align-items: center;
+        align-items: right;
         gap: 32px;
         /* spacing between links */
-        margin: 0;
+        margin-left: 500px;
+        /* push links toward the right side */
         padding: 0;
         list-style: none;
     }
@@ -512,7 +512,7 @@ body {
         font-size: 18px;
         position: absolute;
         right: 25px;
-        /* matches your padding */
+        /* matches padding */
         top: 50%;
         transform: translateY(-50%);
     }
