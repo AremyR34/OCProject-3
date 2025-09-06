@@ -430,47 +430,47 @@ body {
     /* ---------- Restaurants grid ---------- */
     .restaurants {
         background: #f6f6f6;
-        padding: 40px 0 80px;
-        /* breathing room top/bottom */
-        display: grid;
-        grid-template-columns: repeat(2, 490px);
-        /* 2 fixed-width cards */
-        justify-content: center;
-        /* center inside 1440px page */
-        column-gap: 100px;
-        /* horizontal spacing */
+        padding: 40px 0 30px;
     }
 
-    /* Make the section title span both columns */
+    /* Section title sits above the grid */
     .restaurants .section-title {
-        grid-column: 1 / -1;
-        margin: 0 0 8px;
+        margin: 0 0 32px;
+        /* more breathing room before the grid */
         padding: 0;
         font-size: 20px;
     }
 
-    /* Cards stretch to grid column width on desktop */
-    /* Cards: match Figma width/height */
-    .card {
+    /* Grid wrapper controls only cards */
+    .restaurants__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 490px);
+        justify-content: center;
+        column-gap: 100px;
+        /* horizontal spacing between columns */
+        row-gap: 50px;
+        /* vertical spacing between rows only */
+    }
+
+    /* Cards match Figma size */
+    .restaurants__grid .card {
         width: 490px;
-        /* fixed desktop width */
         height: 251px;
-        /* fixed desktop height */
         margin: 0 auto;
-        /* keep centered if needed */
+        /* keep centered in column */
     }
 
-    .card__media {
+    .restaurants__grid .card__media {
         height: 231px;
-        /* per Figma mock, ~2/3 of card */
+        /* image area */
     }
 
-    .card__body {
+    .restaurants__grid .card__body {
         height: 75px;
-        /* remainder of card height */
+        /* text/heart area */
     }
 
-    /* Badge keeps same size; position still top-right */
+    /* Badge unchanged */
     .badge {
         top: 12px;
         right: 12px;
