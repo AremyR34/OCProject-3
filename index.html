@@ -124,94 +124,97 @@
         <section class="restaurants" aria-labelledby="restaurants-title">
           <h2 id="restaurants-title" class="section-title">Restaurants</h2>
 
-          <!-- Card 1: Kitchen West -->
-          <article class="card">
-            <figure class="card__media">
-              <img src="./public/images/kitchenwest.jpg" alt="Kitchen West" />
-              <span class="badge" aria-label="New restaurant">New</span>
-            </figure>
-            <div class="card__body">
-              <div>
-                <h3 class="card__title">Kitchen West</h3>
-                <p class="card__subtitle">Angel</p>
+          <!-- Grid wrapper only for the cards when in desktop -->
+          <div class="restaurants__grid">
+            <!-- Card 1: Kitchen West -->
+            <article class="card">
+              <figure class="card__media">
+                <img src="./public/images/kitchenwest.jpg" alt="Kitchen West" />
+                <span class="badge" aria-label="New restaurant">New</span>
+              </figure>
+              <div class="card__body">
+                <div>
+                  <h3 class="card__title">Kitchen West</h3>
+                  <p class="card__subtitle">Angel</p>
+                </div>
+                <button class="heart" aria-label="Save Kitchen West">
+                  <img
+                    src="./public/images/card-like.svg"
+                    alt="save button"
+                    aria-hidden="true"
+                    class="heart__icon"
+                  />
+                </button>
               </div>
-              <button class="heart" aria-label="Save Kitchen West">
-                <img
-                  src="./public/images/card-like.svg"
-                  alt="save button"
-                  aria-hidden="true"
-                  class="heart__icon"
-                />
-              </button>
-            </div>
-          </article>
+            </article>
 
-          <!-- Card 2: Elderflower -->
-          <article class="card card--elderflower">
-            <figure class="card__media">
-              <img src="./public/images/elderflower.jpg" alt="Elderflower" />
-              <span class="badge" aria-label="New restaurant">New</span>
-            </figure>
-            <div class="card__body">
-              <div>
-                <h3 class="card__title">Elderflower</h3>
-                <p class="card__subtitle">Old Street</p>
+            <!-- Card 2: Elderflower -->
+            <article class="card card--elderflower">
+              <figure class="card__media">
+                <img src="./public/images/elderflower.jpg" alt="Elderflower" />
+                <span class="badge" aria-label="New restaurant">New</span>
+              </figure>
+              <div class="card__body">
+                <div>
+                  <h3 class="card__title">Elderflower</h3>
+                  <p class="card__subtitle">Old Street</p>
+                </div>
+                <button class="heart" aria-label="Save Elderflower">
+                  <img
+                    src="./public/images/card-likefilled.svg"
+                    alt="filled save button"
+                    aria-hidden="true"
+                    class="heart__icon"
+                  />
+                </button>
               </div>
-              <button class="heart" aria-label="Save Elderflower">
-                <img
-                  src="./public/images/card-likefilled.svg"
-                  alt="filled save button"
-                  aria-hidden="true"
-                  class="heart__icon"
-                />
-              </button>
-            </div>
-          </article>
+            </article>
 
-          <!-- Card 3: Shoreditch Canteen -->
-          <article class="card">
-            <figure class="card__media">
-              <img
-                src="./public/images/shoreditchcanteen.jpg"
-                alt="Shoreditch Canteen"
-              />
-            </figure>
-            <div class="card__body">
-              <div>
-                <h3 class="card__title">Shoreditch Canteen</h3>
-                <p class="card__subtitle">Shoreditch</p>
-              </div>
-              <button class="heart" aria-label="Save Shoreditch Canteen">
+            <!-- Card 3: Shoreditch Canteen -->
+            <article class="card">
+              <figure class="card__media">
                 <img
-                  src="./public/images/card-like.svg"
-                  alt="save button"
-                  aria-hidden="true"
-                  class="heart__icon"
+                  src="./public/images/shoreditchcanteen.jpg"
+                  alt="Shoreditch Canteen"
                 />
-              </button>
-            </div>
-          </article>
+              </figure>
+              <div class="card__body">
+                <div>
+                  <h3 class="card__title">Shoreditch Canteen</h3>
+                  <p class="card__subtitle">Shoreditch</p>
+                </div>
+                <button class="heart" aria-label="Save Shoreditch Canteen">
+                  <img
+                    src="./public/images/card-like.svg"
+                    alt="save button"
+                    aria-hidden="true"
+                    class="heart__icon"
+                  />
+                </button>
+              </div>
+            </article>
 
-          <!-- Card 4: The Bay Leaf -->
-          <article class="card">
-            <figure class="card__media">
-              <img src="./public/images/thebayleaf.jpg" alt="The Bay Leaf" />
-            </figure>
-            <div class="card__body">
-              <div>
-                <h3 class="card__title">The Bay Leaf</h3>
-                <p class="card__subtitle">Hoxton</p>
+            <!-- Card 4: The Bay Leaf -->
+            <article class="card">
+              <figure class="card__media">
+                <img src="./public/images/thebayleaf.jpg" alt="The Bay Leaf" />
+              </figure>
+              <div class="card__body">
+                <div>
+                  <h3 class="card__title">The Bay Leaf</h3>
+                  <p class="card__subtitle">Hoxton</p>
+                </div>
+                <button class="heart" aria-label="Save The Bay Leaf">
+                  <img
+                    src="./public/images/card-like.svg"
+                    alt="save button"
+                    aria-hidden="true"
+                    class="heart__icon"
+                  />
+                </button>
               </div>
-              <button class="heart" aria-label="Save The Bay Leaf">
-                <img
-                  src="./public/images/card-like.svg"
-                  alt="save button"
-                  aria-hidden="true"
-                  class="heart__icon"
-                />
-              </button>
-            </div>
-          </article>
+            </article>
+          </div>
         </section>
       </main>
 
