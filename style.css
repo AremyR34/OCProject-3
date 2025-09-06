@@ -147,7 +147,6 @@ body {
     background: #f4f4f4;
     border-radius: 16px;
     padding: 0px 0px 0px 40px;
-    width: 322;
     height: 72px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
@@ -348,4 +347,173 @@ body {
     width: 15px;
     height: 15px;
     display: block;
+}
+
+/* =========================================================
+   DESKTOP LAYOUT (mobile-first → enhance ≥ 1024px)
+   Target mock width 1440px, centered content and 2-col cards
+   ========================================================= */
+@media (min-width: 1024px) {
+
+    /* Page spans wider; still centered */
+    .page {
+        max-width: 1440px;
+    }
+
+    /* Header taller on desktop */
+    .header {
+        height: 96px;
+        /* mock: 96px */
+    }
+
+    .logo-img {
+        height: 40px;
+        /* slightly larger logo */
+    }
+
+    /* Location strip is not shown in desktop mock */
+    .location {
+        display: none;
+    }
+
+    /* ---------- Discover ---------- */
+    .discover-section {
+        background: #f6f6f6;
+        /* wide light band like mock */
+        padding: 64px 0 56px;
+        /* more breathing room */
+        text-align: center;
+    }
+
+    .discover-section__title {
+        font-size: 32px;
+        /* bigger title */
+        margin: 0 0 12px;
+    }
+
+    .discover-section__subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0 0 20px;
+    }
+
+    /* ---------- How it works row ---------- */
+    .how-section__title {
+        padding: 32px 0 18px;
+        margin: 0 96px;
+        /* align with content band */
+    }
+
+    .how-list {
+        padding: 0;
+        /* reset mobile padding */
+        margin: 0 96px 40px;
+        /* left/right gutters */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        /* space between the 3 pills */
+    }
+
+    .how {
+        background: #fff;
+        padding-left: 56px;
+        /* room for icon/number */
+        height: 64px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    }
+
+    .how__icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* ---------- Restaurants grid ---------- */
+    .restaurants {
+        background: #f6f6f6;
+        padding: 40px 0 80px;
+        /* breathing room top/bottom */
+        display: grid;
+        grid-template-columns: repeat(2, 490px);
+        /* 2 fixed-width cards */
+        justify-content: center;
+        /* center inside 1440px page */
+        column-gap: 100px;
+        /* horizontal spacing */
+        row-gap: 50px;
+        /* vertical spacing */
+    }
+
+    /* Make the section title span both columns */
+    .restaurants .section-title {
+        grid-column: 1 / -1;
+        margin: 0 0 8px;
+        padding: 0;
+        font-size: 20px;
+    }
+
+    /* Cards stretch to grid column width on desktop */
+    /* Cards: match Figma width/height */
+    .card {
+        width: 490px;
+        /* fixed desktop width */
+        height: 251px;
+        /* fixed desktop height */
+        margin: 0 auto;
+        /* keep centered if needed */
+    }
+
+    .card__media {
+        height: 231px;
+        /* per Figma mock, ~2/3 of card */
+    }
+
+    .card__body {
+        height: 75px;
+        /* remainder of card height */
+    }
+
+    /* Badge keeps same size; position still top-right */
+    .badge {
+        top: 12px;
+        right: 12px;
+    }
+
+    /* ---------- Footer bar ---------- */
+    .footer {
+        max-width: 100%;
+        padding: 30px 25px 30px 25px;
+    }
+
+    .footer__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* keeps links centered */
+        position: relative;
+        /* allows logo absolute positioning */
+    }
+
+    /* Center the link group */
+    .footer__links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        /* spacing between links */
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    /* Push logo all the way right */
+    .footer__brand {
+        margin: 0;
+        font-family: 'Shrikhand', cursive;
+        font-size: 18px;
+        position: absolute;
+        right: 25px;
+        /* matches your padding */
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
