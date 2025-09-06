@@ -58,15 +58,15 @@ body {
     justify-content: center;
     gap: 10px;
     border-top: 2px solid #d2d2d2;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .08);
-    /* subtle top shadow */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+    /* Add subtle top shadow */
 }
 
 .location__icon {
     width: 17px;
     height: 17px;
-    opacity: .9;
-    color: #000;
+    opacity: 0.9;
+    color: #000000;
 }
 
 .location__text {
@@ -74,14 +74,14 @@ body {
     font-weight: 500;
     font-size: 16px;
     color: #353535;
-    letter-spacing: .1px;
+    letter-spacing: 0.1px;
 }
 
 /* ===== Discover Section ===== */
 .discover-section {
     text-align: center;
     background-color: #f6f6f6;
-    padding: 40px 15px 60px;
+    padding: 40px 15px 60px 15px;
 }
 
 .discover-section__title {
@@ -114,8 +114,9 @@ body {
 .btn--primary {
     color: #fff;
     background: linear-gradient(180deg, var(--pink), var(--purple));
-    box-shadow: 0 8px 18px rgba(147, 86, 220, .25), 0 2px 4px rgba(0, 0, 0, .12);
-    transition: transform .08s ease;
+    box-shadow: 0 8px 18px rgba(147, 86, 220, 0.25),
+        0 2px 4px rgba(0, 0, 0, 0.12);
+    transition: transform 0.08s ease;
 }
 
 .btn--primary:active {
@@ -145,7 +146,7 @@ body {
     align-items: center;
     background: #f4f4f4;
     border-radius: 16px;
-    padding-left: 40px;
+    padding: 0px 0px 0px 40px;
     height: 72px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
@@ -217,8 +218,6 @@ body {
 
 .card__media {
     position: relative;
-    height: 190px;
-    /* explicit height for mobile */
     overflow: hidden;
     margin: 0;
 }
@@ -244,15 +243,17 @@ body {
     width: 80px;
     height: 29px;
     line-height: 29px;
-    /* vertical center text */
+    /* centers text vertically */
+
     background: var(--mint-green);
     color: #1a7a66;
     font-size: 14px;
     font-weight: 500;
     text-align: center;
+
     border-radius: 2px;
-    /* match Figma (not a pill) */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    /* match Figma (not rounded pill) */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .card__body {
@@ -272,7 +273,7 @@ body {
     margin: 0;
     font-size: 17px;
     font-weight: 300;
-    color: #000;
+    color: #000000;
 }
 
 .heart {
@@ -297,6 +298,7 @@ body {
 .footer {
     width: 100%;
     max-width: 375px;
+    max-height: 186px;
     background: var(--dark-gray);
     color: #fff;
     padding: 22px 25px;
@@ -312,6 +314,7 @@ body {
 .footer__brand {
     font-family: 'Shrikhand', cursive;
     font-size: 18px;
+    /* matches menu pages */
     font-weight: 400;
     margin: 0;
 }
@@ -332,12 +335,14 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    /* space between icon and text */
 }
 
 .footer__links a:hover {
     text-decoration: none;
 }
 
+/* Icons */
 .footer__icon {
     width: 15px;
     height: 15px;
@@ -346,38 +351,42 @@ body {
 
 /* =========================================================
      DESKTOP LAYOUT (mobile-first → enhance ≥ 1024px)
-     Target mock width 1440px, 2-col cards, exact gaps
+   Target mock width 1440px, centered content and 2-col cards
      ========================================================= */
 @media (min-width: 1024px) {
 
-    /* Page */
+    /* Page spans wider; still centered */
     .page {
         max-width: 1440px;
     }
 
-    /* Header */
+    /* Header taller on desktop */
     .header {
         height: 96px;
     }
 
     .logo-img {
         height: 40px;
+        /* slightly larger logo */
     }
 
-    /* Location strip hidden on desktop */
+    /* Location strip is not shown in desktop mock */
     .location {
-        display: none;
+        border: none;
+        box-shadow: none;
     }
 
     /* ---------- Discover ---------- */
     .discover-section {
         background: #f6f6f6;
+        /* wide light band like mock */
         padding: 64px 0 56px;
         text-align: center;
     }
 
     .discover-section__title {
         font-size: 32px;
+        /* bigger title */
         margin: 0 0 12px;
     }
 
@@ -391,19 +400,24 @@ body {
     .how-section__title {
         padding: 32px 0 18px;
         margin: 0 96px;
+        /* align with content band */
     }
 
     .how-list {
         padding: 0;
+        /* reset mobile padding */
         margin: 0 96px 40px;
+        /* left/right gutters */
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
+        /* space between the 3 pills */
     }
 
     .how {
         background: #fff;
         padding-left: 56px;
+        /* room for icon/number */
         height: 64px;
         box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
     }
@@ -413,106 +427,92 @@ body {
         height: 22px;
     }
 
-    /* ---------- Restaurants (section wrapper + grid on section itself) ---------- */
+    /* ---------- Restaurants grid ---------- */
     .restaurants {
         background: #f6f6f6;
         padding: 40px 0 80px;
+        /* breathing room top/bottom */
         display: grid;
         grid-template-columns: repeat(2, 490px);
-        /* two fixed-width columns */
+        /* 2 fixed-width cards */
         justify-content: center;
-        /* center grid inside 1440 container */
+        /* center inside 1440px page */
         column-gap: 100px;
-        /* horizontal gap per Figma */
-        /* NOTE: no row-gap here so the title spacing stays independent */
+        /* horizontal spacing */
     }
 
-    /* Title spans both columns with its own bottom margin */
+    /* Make the section title span both columns */
     .restaurants .section-title {
         grid-column: 1 / -1;
-        margin: 0 0 32px;
-        /* independent spacing under title */
+        margin: 0 0 8px;
         padding: 0;
-        font-size: 24px;
+        font-size: 20px;
     }
 
-    /* Desktop card size EXACT per Figma */
+    /* Cards stretch to grid column width on desktop */
+    /* Cards: match Figma width/height */
     .card {
         width: 490px;
+        /* fixed desktop width */
         height: 251px;
-        margin: 0;
-        /* grid handles placement */
+        /* fixed desktop height */
+        margin: 0 auto;
+        /* keep centered if needed */
     }
 
     .card__media {
-        height: 170px;
+        height: 231px;
+        /* per Figma mock, ~2/3 of card */
     }
 
-    /* image area */
     .card__body {
-        height: 81px;
-        padding: 16px;
+        height: 75px;
+        /* remainder of card height */
     }
 
-    /* text row */
-
-    /* Simulate row-gap ONLY between rows of cards (no wrapper needed) */
-    .card:nth-child(n+3) {
-        /* 3rd & 4th card (and beyond) */
-        margin-top: 50px;
-        /* vertical gap between rows */
-    }
-
-    /* Optional typographic softening */
-    .card__title {
-        font-size: 16px;
-        margin-bottom: 2px;
-    }
-
-    .card__subtitle {
-        font-size: 14px;
-        color: var(--text-gray);
-        font-weight: 400;
+    /* Badge keeps same size; position still top-right */
+    .badge {
+        top: 12px;
+        right: 12px;
     }
 
     /* ---------- Footer (desktop) ---------- */
     .footer {
         max-width: 100%;
-        height: 114px;
-        /* Figma height */
-        padding: 0 16px;
-        /* right edge ≈16px per Figma */
-        display: flex;
-        align-items: center;
-        /* vertical center */
-        background: var(--dark-gray);
-        color: #fff;
-        box-sizing: border-box;
+        padding: 45px 25px 45px 25px;
     }
 
     .footer__inner {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        width: 100%;
+        justify-content: center;
+        /* keeps links centered */
+        position: relative;
+        /* allows logo absolute positioning */
         gap: 30px;
     }
 
+    /* Center the link group */
     .footer__links {
         display: flex;
-        align-items: center;
-        /* vertical center */
+        align-items: right;
         gap: 32px;
-        margin-left: auto;
-        /* push links toward right */
+        /* spacing between links */
+        margin-left: 500px;
+        /* push links toward the right side */
         padding: 0;
         list-style: none;
     }
 
+    /* Push logo all the way right */
     .footer__brand {
-        margin-left: 24px;
-        /* space between links & logo */
+        margin: 0;
         font-family: 'Shrikhand', cursive;
         font-size: 18px;
+        position: absolute;
+        right: 25px;
+        /* matches padding */
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
