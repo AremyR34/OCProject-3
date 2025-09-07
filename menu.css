@@ -305,3 +305,148 @@ body {
     height: 15px;
     display: block;
 }
+
+/* =========================================================
+   DESKTOP LAYOUT (mobile-first → enhance ≥ 1024px)
+   Target mock width 1440px
+   ========================================================= */
+@media (min-width: 1024px) {
+
+    /* Page width + header */
+    .page {
+        max-width: 1440px;
+    }
+
+    .header {
+        height: 96px;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    /* Hero photo gets taller on desktop */
+    .restaurant-photo {
+        height: 360px;
+        /* looks like the mock’s scale */
+    }
+
+    /* Curved sheet overlaps photo and is centered, wider paddings */
+    .menu-sheet {
+        max-width: 960px;
+        /* centered sheet width */
+        margin: -90px auto 0;
+        /* stronger overlap on desktop */
+        border-radius: 40px 40px 0 0;
+        padding: 48px 48px 0;
+        /* roomy left/right gutters */
+        background: #f6f6f6;
+    }
+
+    /* Title centered; heart floats to the right of the title row */
+    .restaurant-name {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        /* center the H1 */
+        position: relative;
+        /* anchor the heart */
+        margin-bottom: 18px;
+    }
+
+    .restaurant-name h1 {
+        font-size: 24px;
+        /* slightly smaller than mobile 28, like mock */
+        padding-left: 0;
+    }
+
+    .restaurant-name .heart {
+        position: absolute;
+        right: 0;
+        /* right edge of the sheet */
+        top: 50%;
+        transform: translateY(-50%);
+        padding-left: 0;
+    }
+
+    /* Section headings inside the sheet */
+    .menu {
+        padding-top: 28px;
+        /* a bit tighter on desktop */
+    }
+
+    .menu-heading {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .5px;
+        margin: 0 0 16px;
+    }
+
+    /* Dish cards: wider but still centered under each section */
+    .dish {
+        width: 560px;
+        /* looks like the mock’s card width */
+        height: 69px;
+        margin: 0 auto 12px;
+        /* center the list under each heading */
+        padding: 15px;
+    }
+
+    .dish__name {
+        font-size: 16px;
+        /* slightly softened for desktop */
+        margin-bottom: 4px;
+    }
+
+    .dish__desc {
+        font-size: 14px;
+    }
+
+    .dish__price {
+        padding-top: 22px;
+        font-size: 14px;
+    }
+
+    /* Order button spacing on desktop */
+    .order-row {
+        padding-top: 36px;
+        padding-bottom: 56px;
+    }
+
+    /* Footer matches desktop bar layout from homepage */
+    .footer {
+        max-width: 100%;
+        height: 114px;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        /* vertically center the contents */
+        background: var(--footer);
+        color: #fff;
+        box-sizing: border-box;
+    }
+
+    .footer__inner {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer__links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        margin-left: auto;
+        /* push links to the right */
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer__brand {
+        margin-left: 24px;
+        /* space between links and logo */
+        font-size: 18px;
+    }
+}
