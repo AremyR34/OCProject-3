@@ -97,7 +97,8 @@ body {
     font-weight: 300;
 }
 
-/* CTA button */
+
+/* button */
 .btn {
     display: inline-block;
     padding: 13px 18px;
@@ -148,7 +149,7 @@ body {
     border-radius: 16px;
     padding: 0px 0px 0px 40px;
     height: 72px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .how::before {
@@ -380,33 +381,43 @@ body {
     .discover-section {
         background: #f6f6f6;
         /* wide light band like mock */
-        padding: 64px 0 56px;
+        padding: 30px 0 30px;
         text-align: center;
     }
 
     .discover-section__title {
-        font-size: 32px;
+        font-size: 40px;
         /* bigger title */
-        margin: 0 0 12px;
+        margin: 0 0 25px;
     }
 
     .discover-section__subtitle {
-        font-size: 16px;
-        font-weight: 400;
-        margin: 0 0 20px;
+        font-size: 18px;
+        font-weight: 300;
+        margin: 0 0 25px;
+    }
+
+    /* On desktop, hide the <br> so text stays in one line */
+    .discover-section__subtitle br {
+        display: none;
     }
 
     /* ---------- How it works row ---------- */
+
+    .how-section {
+        padding: 50px 180px 50px 180px;
+    }
+
     .how-section__title {
-        padding: 32px 0 18px;
-        margin: 0 96px;
+        padding: 0 0 25px;
+        margin: 0 90px;
         /* align with content band */
     }
 
     .how-list {
         padding: 0;
         /* reset mobile padding */
-        margin: 0 96px 40px;
+        margin: 0 96px 0;
         /* left/right gutters */
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -415,16 +426,26 @@ body {
     }
 
     .how {
-        background: #fff;
-        padding-left: 56px;
+        background: #f4f4f4;
+        padding-left: 35px;
         /* room for icon/number */
-        height: 64px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+        height: 72px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
 
-    .how__icon {
-        width: 22px;
-        height: 22px;
+    .how-1 .how__icon {
+        width: 13px;
+        height: 20px;
+    }
+
+    .how-2 .how__icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .how-3 .how__icon {
+        width: 18px;
+        height: 18px;
     }
 
     /* ---------- Restaurants grid ---------- */
@@ -467,6 +488,15 @@ body {
     .restaurants__grid .card__body {
         height: 75px;
         /* text/heart area */
+    }
+
+    .card__media img {
+        object-position: 50% 65%;
+    }
+
+    /* fine-tune just Elderflower */
+    .card--elderflower .card__media img {
+        object-position: 50% 57%;
     }
 
     /* Badge unchanged */
