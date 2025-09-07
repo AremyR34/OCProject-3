@@ -325,7 +325,7 @@ body {
         height: 40px;
     }
 
-    /* Hero photo gets taller on desktop */
+    /* photo gets taller on desktop */
     .restaurant-photo {
         height: 360px;
         /* looks like the mock’s scale */
@@ -333,11 +333,11 @@ body {
 
     /* Curved sheet overlaps photo and is centered, wider paddings */
     .menu-sheet {
-        max-width: 960px;
+        max-width: 1055px;
         /* centered sheet width */
-        margin: -90px auto 0;
-        /* stronger overlap on desktop */
-        border-radius: 40px 40px 0 0;
+        margin: -40px auto 0;
+        /* overlap on desktop */
+        border-radius: 38px 38px 0 0;
         padding: 48px 48px 0;
         /* roomy left/right gutters */
         background: #f6f6f6;
@@ -350,13 +350,11 @@ body {
         justify-content: center;
         /* center the H1 */
         position: relative;
-        /* anchor the heart */
-        margin-bottom: 18px;
     }
 
     .restaurant-name h1 {
-        font-size: 24px;
-        /* slightly smaller than mobile 28, like mock */
+        font-size: 28px;
+        font-weight: 400;
         padding-left: 0;
     }
 
@@ -371,46 +369,49 @@ body {
 
     /* Section headings inside the sheet */
     .menu {
-        padding-top: 28px;
-        /* a bit tighter on desktop */
+        padding-top: 40px;
+
     }
 
     .menu-heading {
-        font-size: 12px;
-        font-weight: 500;
+        font-size: 16px;
+        font-weight: 300px;
         letter-spacing: .5px;
-        margin: 0 0 16px;
+        margin: 0 0 0 162px;
+        position: relative;
     }
 
     /* Dish cards: wider but still centered under each section */
     .dish {
-        width: 560px;
-        /* looks like the mock’s card width */
+        width: 635px;
+        /*mock’s card width */
         height: 69px;
-        margin: 0 auto 12px;
+        margin: 12px auto 0;
         /* center the list under each heading */
         padding: 15px;
     }
 
     .dish__name {
-        font-size: 16px;
-        /* slightly softened for desktop */
+        font-size: 18px;
+        font-weight: 500;
         margin-bottom: 4px;
     }
 
     .dish__desc {
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: 300;
     }
 
     .dish__price {
         padding-top: 22px;
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: 700;
     }
 
     /* Order button spacing on desktop */
     .order-row {
-        padding-top: 36px;
-        padding-bottom: 56px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     /* ---------- Footer (desktop) ---------- */
