@@ -413,40 +413,43 @@ body {
         padding-bottom: 56px;
     }
 
-    /* Footer matches desktop bar layout from homepage */
+    /* ---------- Footer (desktop) ---------- */
     .footer {
         max-width: 100%;
-        height: 114px;
-        padding: 0 16px;
-        display: flex;
-        align-items: center;
-        /* vertically center the contents */
-        background: var(--footer);
-        color: #fff;
-        box-sizing: border-box;
+        padding: 45px 25px 45px 25px;
     }
 
     .footer__inner {
-        width: 100%;
         display: flex;
-        flex-direction: row;
         align-items: center;
+        justify-content: center;
+        /* keeps links centered */
+        position: relative;
+        /* allows logo absolute positioning */
         gap: 30px;
     }
 
+    /* Center the link group */
     .footer__links {
         display: flex;
-        align-items: center;
+        align-items: right;
         gap: 32px;
-        margin-left: auto;
-        /* push links to the right */
+        /* spacing between links */
+        margin-left: 500px;
+        /* push links toward the right side */
         padding: 0;
         list-style: none;
     }
 
+    /* Push logo all the way right */
     .footer__brand {
-        margin-left: 24px;
-        /* space between links and logo */
+        margin: 0;
+        font-family: 'Shrikhand', cursive;
         font-size: 18px;
+        position: absolute;
+        right: 25px;
+        /* matches padding */
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
