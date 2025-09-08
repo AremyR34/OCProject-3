@@ -358,6 +358,7 @@ body {
         padding-left: 0;
     }
 
+    /* Heart sits immediately to the right of the title */
     .restaurant-name .heart {
         position: absolute;
         right: 0;
