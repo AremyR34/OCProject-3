@@ -362,10 +362,7 @@ body {
     .restaurant-name .heart {
         position: absolute;
         right: 0;
-        /* right edge of the sheet */
-        top: 50%;
-        transform: translateY(-50%);
-        padding-left: 0;
+        padding-right: 300px;
     }
 
     /* Section headings inside the sheet */
