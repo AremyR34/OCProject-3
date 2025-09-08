@@ -124,6 +124,22 @@ body {
     transform: translateY(1px);
 }
 
+/* ======================
+     Button animations
+  ====================== */
+/* Smooth transitions on all buttons */
+.btn {
+    transition: filter .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+/* Hover: slightly lighter + punchier shadow */
+.btn:hover {
+    filter: brightness(1.06);
+    box-shadow:
+        0 12px 26px rgba(147, 86, 220, .33),
+        0 4px 8px rgba(0, 0, 0, .14);
+}
+
 /* ===== How It Works ===== */
 .how-section__title {
     font-size: 24px;
@@ -280,11 +296,13 @@ body {
 .heart {
     background: none;
     border: none;
-    padding: 0;
+    padding-right: 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    isolation: isolate;
 }
 
 .heart__icon {
@@ -292,6 +310,8 @@ body {
     height: 22px;
     display: block;
 }
+
+
 
 /* ======================
      Footer (mobile)
@@ -349,6 +369,9 @@ body {
     height: 15px;
     display: block;
 }
+
+
+
 
 /* =========================================================
      DESKTOP LAYOUT (mobile-first → enhance ≥ 1024px)

@@ -250,6 +250,22 @@ body {
 }
 
 /* ======================
+     Button animations
+  ====================== */
+/* Smooth transitions on all buttons */
+.btn {
+    transition: filter .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+/* Hover: slightly lighter + punchier shadow */
+.btn:hover {
+    filter: brightness(1.06);
+    box-shadow:
+        0 12px 26px rgba(147, 86, 220, .33),
+        0 4px 8px rgba(0, 0, 0, .14);
+}
+
+/* ======================
      Footer
   ====================== */
 .footer {
