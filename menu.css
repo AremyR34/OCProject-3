@@ -220,6 +220,76 @@ body {
 }
 
 /* ======================
+   Menu Animations
+   ====================== */
+/* --- Apply animation to all dishes --- */
+.dish {
+    opacity: 0;
+    /* starts hidden */
+    transform: translateY(8px);
+    animation: dish-in .5s ease forwards;
+}
+
+/* Keyframes: define how each dish should animate in
+   - Start: invisible + slightly lower
+   - End: visible + moved up into place */
+@keyframes dish-in {
+    to {
+        opacity: 1;
+        transform: none;
+        /* move back to normal position */
+    }
+}
+
+/* --- Stagger animation timing ---
+   nth-child() delays each dish slightly
+   so they appear one after another instead of all at once */
+/* Starters = 2nd <section> */
+.menu:nth-of-type(2) .dish:nth-of-type(1) {
+    animation-delay: .05s;
+}
+
+.menu:nth-of-type(2) .dish:nth-of-type(2) {
+    animation-delay: .15s;
+}
+
+.menu:nth-of-type(2) .dish:nth-of-type(3) {
+    animation-delay: .25s;
+}
+
+.menu:nth-of-type(2) .dish:nth-of-type(4) {
+    animation-delay: .35s;
+}
+
+/* Mains = 3rd <section> */
+.menu:nth-of-type(3) .dish:nth-of-type(1) {
+    animation-delay: .45s;
+}
+
+.menu:nth-of-type(3) .dish:nth-of-type(2) {
+    animation-delay: .55s;
+}
+
+.menu:nth-of-type(3) .dish:nth-of-type(3) {
+    animation-delay: .65s;
+}
+
+
+/* Desserts = 4th <section> */
+.menu:nth-of-type(4) .dish:nth-of-type(1) {
+    animation-delay: .85s;
+}
+
+.menu:nth-of-type(4) .dish:nth-of-type(2) {
+    animation-delay: .95s;
+}
+
+.menu:nth-of-type(4) .dish:nth-of-type(3) {
+    animation-delay: 1.05s;
+}
+
+
+/* ======================
      Order Button
   ====================== */
 .order-row {
