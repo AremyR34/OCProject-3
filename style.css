@@ -293,6 +293,11 @@ body {
     color: #000000;
 }
 
+/* ======================
+   Heart (Like Button) Animation
+   ====================== */
+
+/* Heart container (already styled by you) */
 .heart {
     background: none;
     border: none;
@@ -303,12 +308,37 @@ body {
     justify-content: center;
     position: relative;
     isolation: isolate;
-}
-
-.heart__icon {
+    /* keeps stacking clean */
     width: 22px;
     height: 22px;
+}
+
+/* Outline heart (always visible) */
+.heart__icon {
+    position: absolute;
+    inset: 0;
+    width: 22px;
+    height: 22px;
+    z-index: 1;
     display: block;
+}
+
+/* Filled heart (hidden until hover) */
+.heart__icon--filled {
+    position: absolute;
+    inset: 0;
+    width: 22px;
+    height: 22px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    /* smooth fade-in */
+}
+
+/* On hover or focus, fade the filled heart in */
+.heart:hover .heart__icon--filled,
+.heart:focus .heart__icon--filled {
+    opacity: 1;
 }
 
 
@@ -526,6 +556,14 @@ body {
     .badge {
         top: 12px;
         right: 12px;
+    }
+
+    .heart {
+        padding-right: 30px;
+    }
+
+    .heart__icon--filled {
+        padding-right: 30px;
     }
 
     /* ---------- Footer (desktop) ---------- */
