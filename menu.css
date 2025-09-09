@@ -509,6 +509,10 @@ body {
         margin: 12px auto 0;
         /* center the list under each heading */
         padding: 15px;
+        position: relative;
+        /* anchor the check rail to this card */
+        overflow: hidden;
+        /* hide the rail while it’s off-screen */
     }
 
     .dish__name {
@@ -526,6 +530,49 @@ body {
         padding-top: 22px;
         font-size: 15px;
         font-weight: 700;
+    }
+
+    /* --- Mint check rail (starts hidden off the right edge) --- */
+    .dish__check {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 59px;
+        /* matches card height (69px) in your mock */
+        height: 69px;
+        background: var(--mint);
+        border-radius: 0 15px 15px 0;
+        /* same rounding as card’s right edge */
+        display: grid;
+        place-items: center;
+        transform: translateX(100%);
+        /* hidden off-canvas to the right */
+        transition: transform .35s ease;
+        pointer-events: none;
+        /* purely decorative on hover */
+    }
+
+    /* Optional: size the tick icon inside the rail */
+    .dish__check img {
+        width: 60px;
+        height: 70px;
+        display: block;
+    }
+
+    /* --- On hover: slide the rail in, nudge the price left --- */
+    .dish:hover .dish__check {
+        transform: translateX(0);
+    }
+
+    .dish__price {
+        position: relative;
+        /* enable transform without layout jump */
+        transition: transform .35s ease;
+    }
+
+    /* Move price left so the rail doesn’t cover it (tweak if needed) */
+    .dish:hover .dish__price {
+        transform: translateX(-60px);
     }
 
     /* Order button spacing on desktop */
