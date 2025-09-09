@@ -133,12 +133,58 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-.heart__icon {
-    width: 22px;
-    height: 22px;
-    display: block;
+.heart__icon {}
+
+/* ======================
+   Heart (Like Button) Animation
+   ====================== */
+
+/* Filled heart (hidden by default) */
+.heart__icon--filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.8);
+    /* start slightly smaller */
+    z-index: 2;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* --- Hover/focus/active state ---
+     The filled heart fades in + grows to full size */
+.heart:hover .heart__icon--filled,
+.heart:focus .heart__icon--filled {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Optional: smooth scale bounce effect */
+@keyframes heartPop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Use keyframes for a "pop" animation */
+.heart:hover .heart__icon--filled {
+    animation: heartPop 0.6s ease forwards;
 }
 
 /* ======================
@@ -450,6 +496,13 @@ body {
         right: 0;
         padding-right: 300px;
     }
+
+    .heart__icon--filled {
+        position: absolute;
+        right: 0;
+        padding-right: 300px;
+    }
+
 
     /* Section headings inside the sheet */
     .menu {
