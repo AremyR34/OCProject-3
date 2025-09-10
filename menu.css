@@ -1,3 +1,6 @@
+/* ===========================================
+   THEME
+   =========================================== */
 :root {
     --mint: #99e2d0;
     --purple: #9356DC;
@@ -7,9 +10,10 @@
     /* controls how much the white sheet overlaps the photo */
 }
 
-/* ======================
-     Base + Page Layout
-  ====================== */
+
+/* =========================================================
+     BASE + PAGE LAYOUT (mobile-first, 375px content column)
+     ========================================================= */
 html,
 body {
     margin: 0;
@@ -26,18 +30,23 @@ body {
 .page {
     width: 100%;
     max-width: 375px;
+    /* matches mobile Figma width */
     margin: 0 auto;
+    /* center the content column */
 }
 
-/* ======================
-     Header
-  ====================== */
+
+/* =========================================================
+     HEADER (centered logo, absolute back button)
+     ========================================================= */
 .header {
     position: relative;
+    /* anchors the back button */
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* centers the logo */
     background: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
 }
@@ -66,15 +75,19 @@ body {
     display: block;
 }
 
-/* ======================
-     Restaurant Photo
-  ====================== */
+
+/* =========================================================
+     RESTAURANT PHOTO (under header)
+     ---------------------------------------------------------
+     The photo sits below the header; the curved white sheet
+     overlaps it using a negative margin on the sheet.
+     ========================================================= */
 .restaurant-photo {
     width: 100%;
     height: 275px;
     overflow: hidden;
     position: relative;
-    /* needed for overlap */
+    /* keeps stacking context for overlap */
     z-index: 1;
 }
 
@@ -82,18 +95,23 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* fill and crop nicely */
     display: block;
 }
 
-/* ======================
-     Menu Sheet (curved top)
-  ====================== */
+
+/* =========================================================
+     MENU SHEET (curved top, overlaps photo)
+     ---------------------------------------------------------
+     The overlap is controlled by a negative margin. -40px 
+     ========================================================= */
 .menu-sheet {
     width: 100%;
     position: relative;
     z-index: 2;
-    /* sits above the photo */
+    /* above the photo */
     margin-top: -40px;
+    /* overlap amount */
     background: #f6f6f6;
     border-radius: 40px 40px 0 0;
     /* curved top corners */
@@ -104,14 +122,16 @@ body {
     box-sizing: border-box;
 }
 
-/* ======================
-     Restaurant Name Row
-  ====================== */
+
+/* =========================================================
+     RESTAURANT NAME ROW (title + heart)
+     ========================================================= */
 .restaurant-name {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 341px;
+    /* matches mobile */
     height: 27px;
 }
 
@@ -124,24 +144,26 @@ body {
     margin: 0;
 }
 
-/* ======================
-   Heart (Like Button) Animation
-   ====================== */
 
-/* Heart button container */
+/* =========================================================
+     HEART (LIKE) BUTTON
+     ---------------------------------------------------------
+     Outline heart is always visible; filled heart fades in
+     on hover.
+     ========================================================= */
 .heart {
     position: relative;
     background: none;
     border: none;
     cursor: pointer;
     width: 22px;
-    /* fixed size */
+    /* fixed icon size */
     height: 22px;
-    /* fixed size */
+    /* fixed icon size */
     padding: 0;
 }
 
-/* Outline heart: always visible */
+/* Outline heart (base state) */
 .heart__icon {
     position: absolute;
     top: 0;
@@ -151,7 +173,7 @@ body {
     z-index: 1;
 }
 
-/* Filled heart: hidden by default */
+/* Filled heart (hover state) */
 .heart__icon--filled {
     position: absolute;
     top: 0;
@@ -159,25 +181,27 @@ body {
     width: 22px;
     height: 22px;
     opacity: 0;
+    /* hidden until hover */
     z-index: 2;
-    transition: opacity 0.8s ease;
+    transition: opacity .8s ease;
     /* smooth fade-in */
 }
 
-/* Hover effect: filled heart fades in */
+/* Hover → reveal filled heart */
 .heart:hover .heart__icon--filled {
     opacity: 1;
 }
 
 
-
-/* ======================
-     Menu Sections
-  ====================== */
+/* =========================================================
+     MENU SECTIONS (Starters / Mains / Desserts)
+     ========================================================= */
 .menu {
     padding-top: 40px;
+    /* spacing between sections */
 }
 
+/* Section heading with mint underline */
 .menu-heading {
     margin: 0 0 14px;
     font-size: 16px;
@@ -188,7 +212,7 @@ body {
     position: relative;
 }
 
-/* Mint underline */
+/* Mint underline slab */
 .menu-heading::after {
     content: "";
     display: block;
@@ -198,13 +222,15 @@ body {
     background: var(--mint);
 }
 
-/* ======================
-     Dish Cards
-  ====================== */
+
+/* =========================================================
+     DISH CARDS (title, description, price)
+     ========================================================= */
 .dish {
     width: 349px;
     height: 69px;
     margin: 0 auto 12px;
+    /* centered stack, 12px gap */
     background: #fff;
     border-radius: 15px;
     padding: 15px;
@@ -222,6 +248,7 @@ body {
     flex-direction: column;
     justify-content: center;
     min-width: 0;
+    /* enables text truncation if desired */
 }
 
 .dish__name {
@@ -242,6 +269,7 @@ body {
 
 .dish__price {
     padding-top: 24px;
+    /* aligns visually with two-line titles */
     margin-left: 12px;
     font-weight: 700;
     font-size: 15px;
@@ -249,25 +277,31 @@ body {
     color: #111;
 }
 
-/* ======================
-   Menu Animations
-   ====================== */
-/* --- Apply animation to all dishes --- */
+
+/* =========================================================
+     MENU ENTRANCE ANIMATIONS (staggered)
+     ---------------------------------------------------------
+     - Base: all dishes fade+slide up.
+     - Stagger: nth-of-type delays per section for cascade.
+     Make sure your HTML section order matches these nth-of
+     selectors (2 = Starters, 3 = Mains, 4 = Desserts).
+     ========================================================= */
+
+/* Base animation for all dishes */
 .dish {
     opacity: 0;
-    /* starts hidden */
+    /* start hidden */
     transform: translateY(8px);
+    /* slight slide up */
     animation: dish-in .5s ease forwards;
 }
 
-/* Keyframes: define how each dish should animate in
-   - Start: invisible + slightly lower
-   - End: visible + moved up into place */
+/* Keyframes: fade & rise */
 @keyframes dish-in {
     to {
         opacity: 1;
         transform: none;
-        /* move back to normal position */
+        /* back to normal position */
     }
 }
 
@@ -291,7 +325,7 @@ body {
     animation-delay: .35s;
 }
 
-/* Mains = 3rd <section> */
+/* Stagger timings — Mains (3rd .menu) */
 .menu:nth-of-type(3) .dish:nth-of-type(1) {
     animation-delay: .45s;
 }
@@ -304,8 +338,7 @@ body {
     animation-delay: .65s;
 }
 
-
-/* Desserts = 4th <section> */
+/* Stagger timings — Desserts (4th .menu) */
 .menu:nth-of-type(4) .dish:nth-of-type(1) {
     animation-delay: .85s;
 }
@@ -319,26 +352,33 @@ body {
 }
 
 
-/* ======================
-     Order Button
-  ====================== */
+/* =========================================================
+     ORDER BUTTON & BUTTON ANIMATION
+     ========================================================= */
 .order-row {
     display: flex;
     justify-content: center;
     padding-bottom: 40px;
     padding-top: 28px;
-    /* 40px - 12px margin from dish cards */
+    /* 40px minus 12px card gap keeps rhythm */
 }
 
 .btn {
     width: 186px;
     height: 50px;
     padding: 16px 73px 15px 73px;
+    /* matches comp; keeps label centered */
     border: 0;
     border-radius: 999px;
     font-weight: 500;
     line-height: 1;
     cursor: pointer;
+
+    /* ======================
+     Button animations
+  ====================== */
+    /* Smooth transitions on all buttons */
+    transition: filter .18s ease, box-shadow .18s ease, transform .18s ease;
 }
 
 .btn--primary {
@@ -349,15 +389,7 @@ body {
         0 2px 4px rgba(0, 0, 0, .12);
 }
 
-/* ======================
-     Button animations
-  ====================== */
-/* Smooth transitions on all buttons */
-.btn {
-    transition: filter .18s ease, box-shadow .18s ease, transform .18s ease;
-}
-
-/* Hover: slightly lighter + punchier shadow */
+/* Hover state: subtle pop */
 .btn:hover {
     filter: brightness(1.06);
     box-shadow:
@@ -365,9 +397,10 @@ body {
         0 4px 8px rgba(0, 0, 0, .14);
 }
 
-/* ======================
-     Footer
-  ====================== */
+
+/* ==========================================
+     FOOTER (mobile)
+     ======================================== */
 .footer {
     width: 100%;
     max-width: 375px;
@@ -415,20 +448,22 @@ body {
     text-decoration: none;
 }
 
-/* Icons */
+/* Link icons */
 .footer__icon {
     width: 15px;
     height: 15px;
     display: block;
 }
 
+
 /* =========================================================
-   DESKTOP LAYOUT (mobile-first → enhance ≥ 1024px)
-   Target mock width 1440px
-   ========================================================= */
+     DESKTOP LAYOUT (≥ 1024px) — photo wider, sheet centered
+     ---------------------------------------------------------
+     Target overall page width ~1440px, sheet ~1055px.
+     ========================================================= */
 @media (min-width: 1024px) {
 
-    /* Page width + header */
+    /* Page & header scale-up */
     .page {
         max-width: 1440px;
     }
@@ -441,10 +476,10 @@ body {
         height: 40px;
     }
 
-    /* photo gets taller on desktop */
+    /* Taller photo on desktop */
     .restaurant-photo {
         height: 360px;
-        /* looks like the mock’s scale */
+        /* closer to mock scale */
     }
 
     /* Curved sheet overlaps photo and is centered, wider paddings */
@@ -452,14 +487,15 @@ body {
         max-width: 1055px;
         /* centered sheet width */
         margin: -40px auto 0;
-        /* overlap on desktop */
+        /* overlap + center */
         border-radius: 38px 38px 0 0;
+        /* slight radius tweak */
         padding: 48px 48px 0;
-        /* roomy left/right gutters */
+        /* wider gutters */
         background: #f6f6f6;
     }
 
-    /* Title centered; heart floats to the right of the title row */
+    /* Title centered; heart floats to the far right of the row */
     .restaurant-name {
         width: 100%;
         height: auto;
@@ -486,11 +522,9 @@ body {
         padding-right: 300px;
     }
 
-
     /* Section headings inside the sheet */
     .menu {
         padding-top: 40px;
-
     }
 
     .menu-heading {
@@ -498,19 +532,20 @@ body {
         font-weight: 300px;
         letter-spacing: .5px;
         margin: 0 0 0 162px;
+        /* aligns heading slab with cards */
         position: relative;
     }
 
-    /* Dish cards: wider but still centered under each section */
+    /* Dish cards: wider & centered under headings */
     .dish {
         width: 635px;
         /*mock’s card width */
         height: 69px;
         margin: 12px auto 0;
-        /* center the list under each heading */
+        /* center the list */
         padding: 15px;
         position: relative;
-        /* anchor the check rail to this card */
+        /* anchor the check rail */
         overflow: hidden;
         /* hide the rail while it’s off-screen */
     }
@@ -532,45 +567,45 @@ body {
         font-weight: 700;
     }
 
-    /* --- Mint check rail (starts hidden off the right edge) --- */
+    /* Mint check rail (slides in on hover) */
     .dish__check {
         position: absolute;
         top: 0;
         right: 0;
         width: 59px;
-        /* matches card height (69px) in your mock */
+        /* rail width */
         height: 69px;
+        /* equals card height */
         background: var(--mint);
         border-radius: 0 15px 15px 0;
-        /* same rounding as card’s right edge */
+        /* matches card corners on the right */
         display: grid;
         place-items: center;
         transform: translateX(100%);
-        /* hidden off-canvas to the right */
+        /* hidden off to the right */
         transition: transform .35s ease;
         pointer-events: none;
-        /* purely decorative on hover */
+        /* decorative only */
     }
 
-    /* Optional: size the tick icon inside the rail */
+    /* Optional: tick icon sizing inside the rail */
     .dish__check img {
         width: 60px;
         height: 70px;
         display: block;
     }
 
-    /* --- On hover: slide the rail in, nudge the price left --- */
+    /* Hover behavior: slide rail in, nudge price left so it stays visible */
     .dish:hover .dish__check {
         transform: translateX(0);
     }
 
     .dish__price {
         position: relative;
-        /* enable transform without layout jump */
         transition: transform .35s ease;
     }
 
-    /* Move price left so the rail doesn’t cover it (tweak if needed) */
+    /* Move price left so the rail doesn’t cover it */
     .dish:hover .dish__price {
         transform: translateX(-60px);
     }
@@ -581,7 +616,7 @@ body {
         padding-bottom: 40px;
     }
 
-    /* ---------- Footer (desktop) ---------- */
+    /* Footer (desktop) */
     .footer {
         max-width: 100%;
         padding: 45px 25px 45px 25px;
@@ -597,10 +632,8 @@ body {
         gap: 30px;
     }
 
-    /* Center the link group */
     .footer__links {
         display: flex;
-        align-items: right;
         gap: 32px;
         /* spacing between links */
         margin-left: 500px;
@@ -609,14 +642,13 @@ body {
         list-style: none;
     }
 
-    /* Push logo all the way right */
     .footer__brand {
         margin: 0;
         font-family: 'Shrikhand', cursive;
         font-size: 18px;
         position: absolute;
         right: 25px;
-        /* matches padding */
+        /* matches footer padding */
         top: 50%;
         transform: translateY(-50%);
     }
