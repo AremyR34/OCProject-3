@@ -428,6 +428,13 @@ body {
     color: #000000;
 }
 
+.card__title,
+.card__subtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 
 /* =========================================
      HEART (LIKE BUTTON) ANIMATION

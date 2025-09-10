@@ -267,6 +267,13 @@ body {
     color: #666;
 }
 
+.dish__name,
+.dish__desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .dish__price {
     padding-top: 24px;
     /* aligns visually with two-line titles */
