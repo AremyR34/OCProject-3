@@ -1,5 +1,5 @@
 /* =========================================
-   THEME / RESET / LAYOUT BASICS
+   THEME / LAYOUT BASICS
    ========================================= */
 
 /* Theme Colors */
@@ -15,7 +15,7 @@
     --text-gray: #666;
 }
 
-/* Base Reset */
+/* Base */
 html,
 body {
     margin: 0;
