@@ -3,8 +3,8 @@
       { "format": "expanded", "extensionName": ".css", "savePath": "/" }
     ],
     "liveSassCompile.settings.includeItems": [
-      "src/sass/style.sass",
-      "src/sass/menu.sass"
+      "/src/sass/style.sass",
+      "/src/sass/menu.sass"
     ],
     "liveSassCompile.settings.generateMap": true
   }
