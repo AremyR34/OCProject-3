@@ -1,0 +1,302 @@
+/* Menu page background */
+body
+  background: #f6f6f6
+
+/* ===== Header (back button + centered logo) ===== */
+.header
+  position: relative
+  height: 60px
+  display: flex
+  align-items: center
+  justify-content: center
+  background: #fff
+  box-shadow: 0 2px 8px rgba(0,0,0,.08)
+
+.back-btn
+  position: absolute
+  left: 16px
+  top: 0
+  bottom: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 30px
+
+.back-icon
+  width: 30px
+  height: 30px
+  display: block
+
+.logo-img
+  height: 32px
+  display: block
+
+/* ===== Restaurant Photo ===== */
+.restaurant-photo
+  width: 100%
+  height: 275px
+  overflow: hidden
+  position: relative
+  z-index: 1
+
+.restaurant-photo img
+  width: 100%
+  height: 100%
+  object-fit: cover
+  display: block
+
+/* ===== Menu Sheet (curved) ===== */
+.menu-sheet
+  width: 100%
+  position: relative
+  z-index: 2
+  margin-top: -40px
+  background: #f6f6f6
+  border-radius: 40px 40px 0 0
+  box-shadow: 0 -2px 0 rgba(0,0,0,.03), 0 8px 24px rgba(0,0,0,.10)
+  padding: 45px 13px 0
+  box-sizing: border-box
+
+/* ===== Name + Heart ===== */
+.restaurant-name
+  display: flex
+  align-items: center
+  justify-content: space-between
+  width: 341px
+  height: 27px
+
+.restaurant-name h1
+  font-family: 'Shrikhand', cursive
+  font-size: 28px
+  font-weight: 400
+  line-height: 100%
+  padding-left: 4px
+  margin: 0
+
+/* Heart */
+.heart
+  position: relative
+  background: none
+  border: none
+  cursor: pointer
+  width: 22px
+  height: 22px
+  padding: 0
+
+.heart__icon
+  position: absolute
+  top: 0
+  left: 0
+  width: 22px
+  height: 22px
+  z-index: 1
+
+.heart__icon--filled
+  position: absolute
+  top: 0
+  left: 0
+  width: 22px
+  height: 22px
+  opacity: 0
+  z-index: 2
+  transition: opacity .8s ease
+
+.heart:hover .heart__icon--filled
+  opacity: 1
+
+/* ===== Sections ===== */
+.menu
+  padding-top: 40px
+
+.menu-heading
+  margin: 0 0 14px
+  font-size: 16px
+  font-weight: 300
+  text-transform: uppercase
+  color: #2d2d2d
+  width: max-content
+  position: relative
+
+.menu-heading::after
+  content: ""
+  display: block
+  height: 4px
+  width: 40px
+  margin-top: 5px
+  background: var(--mint)
+
+/* ===== Dish cards ===== */
+.dish
+  width: 349px
+  height: 69px
+  margin: 0 auto 12px
+  background: #fff
+  border-radius: 15px
+  padding: 15px
+  box-sizing: border-box
+  display: flex
+  align-items: center
+  justify-content: space-between
+  box-shadow: 0 4px 12px rgba(0,0,0,.08)
+
+/* text truncation */
+.dish__info
+  display: flex
+  flex-direction: column
+  justify-content: center
+  min-width: 0
+
+.dish__name, .dish__desc
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+.dish__name
+  margin: 0 0 5px
+  font-weight: 500
+  font-size: 18px
+  line-height: 100%
+  color: #111
+
+.dish__desc
+  margin: 0
+  font-weight: 300
+  font-size: 15px
+  line-height: 100%
+  color: #666
+
+.dish__price
+  padding-top: 24px
+  margin-left: 12px
+  font-weight: 700
+  font-size: 15px
+  white-space: nowrap
+  color: #111
+
+/* Entrance animation */
+.dish
+  opacity: 0
+  transform: translateY(8px)
+  animation: dish-in .5s ease forwards
+
+@keyframes dish-in
+  to
+    opacity: 1
+    transform: none
+
+/* ===== Order Button ===== */
+.order-row
+  display: flex
+  justify-content: center
+  padding-bottom: 40px
+  padding-top: 28px
+
+.btn
+  width: 186px
+  height: 50px
+  padding: 16px 73px 15px
+  border: 0
+  border-radius: 999px
+  font-weight: 500
+  line-height: 1
+  cursor: pointer
+  transition: filter .18s ease, box-shadow .18s ease, transform .18s ease
+
+.btn--primary
+  color: #fff
+  background: linear-gradient(180deg, var(--pink), var(--purple))
+  box-shadow: 0 8px 18px rgba(147, 86, 220, .25), 0 2px 4px rgba(0, 0, 0, .12)
+
+.btn:hover
+  filter: brightness(1.06)
+  box-shadow: 0 12px 26px rgba(147, 86, 220, .33), 0 4px 8px rgba(0, 0, 0, .14)
+
+/* ===== Desktop (menu page) ===== */
+@media (min-width: 1024px)
+  .page
+    max-width: 1440px
+
+  .header
+    height: 96px
+
+  .logo-img
+    height: 40px
+
+  .restaurant-photo
+    height: 360px
+
+  .menu-sheet
+    max-width: 1055px
+    margin: -40px auto 0
+    border-radius: 38px 38px 0 0
+    padding: 48px 48px 0
+    background: #f6f6f6
+
+  .restaurant-name
+    width: 100%
+    height: auto
+    justify-content: center
+    position: relative
+
+  .restaurant-name h1
+    font-size: 28px
+    font-weight: 400
+    padding-left: 0
+
+  .restaurant-name .heart
+    position: absolute
+    right: 0
+    padding-right: 300px
+
+  .menu
+    padding-top: 40px
+
+  .menu-heading
+    font-size: 16px
+    letter-spacing: .5px
+    margin: 0 0 0 162px
+    position: relative
+
+  .dish
+    width: 635px
+    height: 69px
+    margin: 12px auto 0
+    padding: 15px
+    position: relative
+    overflow: hidden
+
+  .dish__name
+    font-size: 18px
+    font-weight: 500
+    margin-bottom: 4px
+
+  .dish__desc
+    font-size: 15px
+    font-weight: 300
+
+  .dish__price
+    padding-top: 22px
+    font-size: 15px
+    font-weight: 700
+    position: relative
+    transition: transform .35s ease
+
+  .dish__check
+    position: absolute
+    top: 0
+    right: 0
+    width: 59px
+    height: 69px
+    background: var(--mint)
+    border-radius: 0 15px 15px 0
+    display: grid
+    place-items: center
+    transform: translateX(100%)
+    transition: transform .35s ease
+    pointer-events: none
+
+  .dish:hover .dish__check
+    transform: translateX(0)
+
+  .dish:hover .dish__price
+    transform: translateX(-60px)
