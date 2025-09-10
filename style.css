@@ -1,4 +1,8 @@
-/* ===== Theme Colors ===== */
+/* =========================================
+   THEME / RESET / LAYOUT BASICS
+   ========================================= */
+
+/* Theme Colors */
 :root {
     --mint-green: #99e2d0;
     --light-blue: #eafBff;
@@ -11,7 +15,7 @@
     --text-gray: #666;
 }
 
-/* ===== Base Reset ===== */
+/* Base Reset */
 html,
 body {
     margin: 0;
@@ -24,7 +28,7 @@ body {
     color: #111;
 }
 
-/* ===== Page Wrapper (375px centered) ===== */
+/* Page Wrapper (mobile width centered) */
 .page {
     width: 100%;
     max-width: 375px;
@@ -33,7 +37,11 @@ body {
     background: #fff;
 }
 
-/* ===== Loader (mobile-first) ===== */
+
+/* =========================================
+     LOADER (MOBILE-FIRST)
+     ========================================= */
+
 .loader {
     position: fixed;
     inset: 0;
@@ -42,17 +50,17 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* start at top so logo is visible */
+    /* keep logo visible at top */
     padding: 16px;
     background: linear-gradient(180deg, var(--pink), var(--purple));
     z-index: 9999;
 
-    /* keep your fade-out */
+    /* fade-out overlay after delay */
     animation: fadeOut 2s ease forwards;
     animation-delay: 2s;
 }
 
-/* Logo pinned near the top */
+/* Loader Logo (sticky near top) */
 .loader__logo {
     font-family: 'Shrikhand', cursive;
     font-size: 55px;
@@ -61,22 +69,21 @@ body {
     margin: 0 0 12px 0;
     text-shadow: 0 2px 6px rgba(0, 0, 0, .18);
     position: sticky;
-    /* stays visible if anything scrolls */
+    /* stays visible if cards scroll */
     top: 8px;
     z-index: 1;
 }
 
-/* Container matches mobile page width */
+/* Loader Cards Container */
 .loader__cards {
     width: 100%;
     max-width: 350px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-
 }
 
-/* ===== Loader cards (distinct from page cards) ===== */
+/* Loader Card (distinct from page .card) */
 .loadercard {
     background: #fff;
     color: #111;
@@ -86,10 +93,10 @@ body {
     border-radius: 12px;
     overflow: hidden;
     height: 175px;
-    /* ≤ 100px as requested */
     box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
 }
 
+/* Loader Card: Media */
 .loadercard__media {
     flex: 1;
     margin: 0;
@@ -105,7 +112,7 @@ body {
     display: block;
 }
 
-/* Body shrinks: centered text */
+/* Loader Card: Body (centered text) */
 .loadercard__body {
     height: 40px;
     display: flex;
@@ -114,11 +121,10 @@ body {
     /* center horizontally */
     justify-content: center;
     /* center vertically */
-    padding: 0 0 0 5;
     text-align: center;
 }
 
-/* Title + subtitle centered */
+/* Loader Card: Title & Subtitle */
 .loadercard__title {
     margin: 0 0 2px 0;
     font-size: 14px;
@@ -134,7 +140,7 @@ body {
     line-height: 1;
 }
 
-/* Make sure the overlay becomes non-interactive after fading */
+/* Loader Fade-out */
 @keyframes fadeOut {
     to {
         opacity: 0;
@@ -143,7 +149,11 @@ body {
     }
 }
 
-/* ===== Header ===== */
+
+/* =========================================
+     HEADER
+     ========================================= */
+
 .header {
     height: 60px;
     display: grid;
@@ -157,7 +167,11 @@ body {
     display: block;
 }
 
-/* ===== Location Bar ===== */
+
+/* =========================================
+     LOCATION BAR
+     ========================================= */
+
 .location {
     width: 100%;
     /* full 375px */
@@ -169,7 +183,7 @@ body {
     gap: 10px;
     border-top: 2px solid #d2d2d2;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08);
-    /* Add subtle top shadow */
+    /* subtle top shadow */
 }
 
 .location__icon {
@@ -187,7 +201,11 @@ body {
     letter-spacing: 0.1px;
 }
 
-/* ===== Discover Section ===== */
+
+/* =========================================
+     DISCOVER SECTION
+     ========================================= */
+
 .discover-section {
     text-align: center;
     background-color: #f6f6f6;
@@ -208,7 +226,10 @@ body {
 }
 
 
-/* button */
+/* =========================================
+     BUTTONS
+     ========================================= */
+
 .btn {
     display: inline-block;
     padding: 13px 18px;
@@ -220,26 +241,22 @@ body {
     font-size: 16px;
     line-height: 1;
     cursor: pointer;
+
+    /* Smooth transitions on all buttons */
+    transition: filter .18s ease, box-shadow .18s ease, transform .18s ease;
 }
 
 .btn--primary {
     color: #fff;
     background: linear-gradient(180deg, var(--pink), var(--purple));
-    box-shadow: 0 8px 18px rgba(147, 86, 220, 0.25),
+    box-shadow:
+        0 8px 18px rgba(147, 86, 220, 0.25),
         0 2px 4px rgba(0, 0, 0, 0.12);
     transition: transform 0.08s ease;
 }
 
 .btn--primary:active {
     transform: translateY(1px);
-}
-
-/* ======================
-     Button animations
-  ====================== */
-/* Smooth transitions on all buttons */
-.btn {
-    transition: filter .18s ease, box-shadow .18s ease, transform .18s ease;
 }
 
 /* Hover: slightly lighter + punchier shadow */
@@ -250,7 +267,11 @@ body {
         0 4px 8px rgba(0, 0, 0, .14);
 }
 
-/* ===== How It Works ===== */
+
+/* =========================================
+     HOW IT WORKS SECTION
+     ========================================= */
+
 .how-section__title {
     font-size: 24px;
     font-weight: 700;
@@ -317,7 +338,11 @@ body {
     color: #1b1b1b;
 }
 
-/* ===== Restaurants ===== */
+
+/* =========================================
+     RESTAURANTS
+     ========================================= */
+
 .restaurants {
     background-color: #f6f6f6;
     padding-bottom: 55px;
@@ -371,13 +396,11 @@ body {
     height: 29px;
     line-height: 29px;
     /* centers text vertically */
-
     background: var(--mint-green);
     color: #1a7a66;
     font-size: 14px;
     font-weight: 500;
     text-align: center;
-
     border-radius: 2px;
     /* match Figma (not rounded pill) */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -403,11 +426,11 @@ body {
     color: #000000;
 }
 
-/* ======================
-   Heart (Like Button) Animation
-   ====================== */
 
-/* Heart container (already styled by you) */
+/* =========================================
+     HEART (LIKE BUTTON) ANIMATION
+     ========================================= */
+
 .heart {
     background: none;
     border: none;
