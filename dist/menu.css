@@ -17,7 +17,8 @@
 }
 
 /* Base reset + shared page wrapper */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -84,7 +85,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -202,7 +203,8 @@ body {
   min-width: 0;
 }
 
-.dish__name, .dish__desc {
+.dish__name,
+.dish__desc {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -240,12 +242,61 @@ body {
   animation: dish-in 0.5s ease forwards;
 }
 
+/* Keyframes: fade & rise */
 @keyframes dish-in {
   to {
     opacity: 1;
     transform: none;
+    /* back to normal position */
   }
 }
+
+/* --- Stagger animation timing ---
+ nth-child() delays each dish slightly
+ so they appear one after another instead of all at once */
+/* Starters = 2nd <section> */
+.menu:nth-of-type(2) .dish:nth-of-type(1) {
+  animation-delay: .05s;
+}
+
+.menu:nth-of-type(2) .dish:nth-of-type(2) {
+  animation-delay: .15s;
+}
+
+.menu:nth-of-type(2) .dish:nth-of-type(3) {
+  animation-delay: .25s;
+}
+
+.menu:nth-of-type(2) .dish:nth-of-type(4) {
+  animation-delay: .35s;
+}
+
+/* Stagger timings — Mains (3rd .menu) */
+.menu:nth-of-type(3) .dish:nth-of-type(1) {
+  animation-delay: .45s;
+}
+
+.menu:nth-of-type(3) .dish:nth-of-type(2) {
+  animation-delay: .55s;
+}
+
+.menu:nth-of-type(3) .dish:nth-of-type(3) {
+  animation-delay: .65s;
+}
+
+/* Stagger timings — Desserts (4th .menu) */
+.menu:nth-of-type(4) .dish:nth-of-type(1) {
+  animation-delay: .85s;
+}
+
+.menu:nth-of-type(4) .dish:nth-of-type(2) {
+  animation-delay: .95s;
+}
+
+.menu:nth-of-type(4) .dish:nth-of-type(3) {
+  animation-delay: 1.05s;
+}
+
 /* ===== Order Button ===== */
 .order-row {
   display: flex;
@@ -282,15 +333,19 @@ body {
   .page {
     max-width: 1440px;
   }
+
   .header {
     height: 96px;
   }
+
   .logo-img {
     height: 40px;
   }
+
   .restaurant-photo {
     height: 360px;
   }
+
   .menu-sheet {
     max-width: 1055px;
     margin: -40px auto 0;
@@ -298,31 +353,37 @@ body {
     padding: 48px 48px 0;
     background: #f6f6f6;
   }
+
   .restaurant-name {
     width: 100%;
     height: auto;
     justify-content: center;
     position: relative;
   }
+
   .restaurant-name h1 {
     font-size: 28px;
     font-weight: 400;
     padding-left: 0;
   }
+
   .restaurant-name .heart {
     position: absolute;
     right: 0;
     padding-right: 300px;
   }
+
   .menu {
     padding-top: 40px;
   }
+
   .menu-heading {
     font-size: 16px;
     letter-spacing: 0.5px;
     margin: 0 0 0 162px;
     position: relative;
   }
+
   .dish {
     width: 635px;
     height: 69px;
@@ -331,15 +392,18 @@ body {
     position: relative;
     overflow: hidden;
   }
+
   .dish__name {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 4px;
   }
+
   .dish__desc {
     font-size: 15px;
     font-weight: 300;
   }
+
   .dish__price {
     padding-top: 22px;
     font-size: 15px;
@@ -347,6 +411,7 @@ body {
     position: relative;
     transition: transform 0.35s ease;
   }
+
   .dish__check {
     position: absolute;
     top: 0;
@@ -361,13 +426,16 @@ body {
     transition: transform 0.35s ease;
     pointer-events: none;
   }
+
   .dish:hover .dish__check {
     transform: translateX(0);
   }
+
   .dish:hover .dish__price {
     transform: translateX(-60px);
   }
 }
+
 /* ===== Footer (mobile) ===== */
 .footer {
   width: 100%;
@@ -421,6 +489,7 @@ body {
     max-width: 100%;
     padding: 45px 25px;
   }
+
   .footer__inner {
     display: flex;
     align-items: center;
@@ -428,6 +497,7 @@ body {
     position: relative;
     gap: 30px;
   }
+
   .footer__links {
     display: flex;
     gap: 32px;
@@ -435,6 +505,7 @@ body {
     padding: 0;
     list-style: none;
   }
+
   .footer__brand {
     margin: 0;
     font-family: "Shrikhand", cursive;
@@ -444,4 +515,6 @@ body {
     top: 50%;
     transform: translateY(-50%);
   }
-}/*# sourceMappingURL=menu.css.map */
+}
+
+/*# sourceMappingURL=menu.css.map */
