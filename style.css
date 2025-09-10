@@ -59,7 +59,7 @@ body {
 
     /* fade-out overlay after delay */
     animation: fadeOut 2s ease forwards;
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 /* Loader Logo (sticky near top) */
