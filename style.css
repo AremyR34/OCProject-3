@@ -33,6 +33,116 @@ body {
     background: #fff;
 }
 
+/* ===== Loader (mobile-first) ===== */
+.loader {
+    position: fixed;
+    inset: 0;
+    /* full screen overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* start at top so logo is visible */
+    padding: 16px;
+    background: linear-gradient(180deg, var(--pink), var(--purple));
+    z-index: 9999;
+
+    /* keep your fade-out */
+    animation: fadeOut 2s ease forwards;
+    animation-delay: 2s;
+}
+
+/* Logo pinned near the top */
+.loader__logo {
+    font-family: 'Shrikhand', cursive;
+    font-size: 55px;
+    line-height: 1;
+    color: #fff;
+    margin: 0 0 12px 0;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .18);
+    position: sticky;
+    /* stays visible if anything scrolls */
+    top: 8px;
+    z-index: 1;
+}
+
+/* Container matches mobile page width */
+.loader__cards {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+/* ===== Loader cards (distinct from page cards) ===== */
+.loadercard {
+    background: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    /* media above text */
+    border-radius: 12px;
+    overflow: hidden;
+    height: 175px;
+    /* ≤ 100px as requested */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+.loadercard__media {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.loadercard__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 60%;
+    display: block;
+}
+
+/* Body shrinks: centered text */
+.loadercard__body {
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* center horizontally */
+    justify-content: center;
+    /* center vertically */
+    padding: 0 0 0 5;
+    text-align: center;
+}
+
+/* Title + subtitle centered */
+.loadercard__title {
+    margin: 0 0 2px 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.loadercard__subtitle {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1;
+}
+
+/* Make sure the overlay becomes non-interactive after fading */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
 /* ===== Header ===== */
 .header {
     height: 60px;
@@ -412,6 +522,44 @@ body {
     /* Page spans wider; still centered */
     .page {
         max-width: 1440px;
+    }
+
+    /* Widen the loader container */
+    .loader__cards {
+        max-width: 800px;
+        /* enough space for 2 columns */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+        /* spacing between cards */
+        justify-content: center;
+        /* center the grid */
+    }
+
+    /* Slightly larger cards for desktop */
+    .loadercard {
+        height: 200px;
+        /* taller for bigger screens */
+    }
+
+    .loadercard__body {
+        height: 50px;
+        /* allow text a bit more breathing room */
+    }
+
+    .loadercard__title {
+        font-size: 16px;
+    }
+
+    .loadercard__subtitle {
+        font-size: 14px;
+    }
+
+    /* Logo larger on desktop */
+    .loader__logo {
+        font-size: 72px;
+        margin-top: 30px;
+        margin-bottom: 60px;
     }
 
     /* Header taller on desktop */
