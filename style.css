@@ -549,8 +549,8 @@ body {
 
 
 /* =========================================================
-     DESKTOP LAYOUT (mobile-first → enhance ≥ 1024px)
-   Target mock width 1440px, centered content and 2-col cards
+     DESKTOP LAYOUT (mobile-first ≥ 1024px)
+   Target mock width 1440px, centered content 
      ========================================================= */
 @media (min-width: 1024px) {
 
